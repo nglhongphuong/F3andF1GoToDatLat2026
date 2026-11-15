@@ -24,6 +24,8 @@ Web làm theo kiểu app điện thoại: có thanh tab ở dưới (Lịch trì
 Muốn có icon trên màn hình chính: iPhone mở bằng Safari → Chia sẻ → *Thêm vào MH chính*; Android mở bằng Chrome → ⋮ → *Thêm vào màn hình chính*.
 
 ## Nhạc nền
+Mở web là nhạc tự phát. Nếu trình duyệt chặn tự phát (điện thoại hay chặn), web hiện màn hình chào **"Chạm để vào & bật nhạc"**, chạm 1 lần là có nhạc. Tắt tự phát: ghi `Tự phát nhạc = không` trong data.txt.
+
 Nút 🎵 góc phải dưới. Mặc định là nhạc lofi tự tạo bằng code (bài gốc, không vướng bản quyền).
 Muốn đổi bài: bỏ file `.mp3` vào thư mục `music/` rồi ghi `Nhạc = music/ten-file.mp3` trong data.txt,
 hoặc dán link YouTube/Spotify (bấm nút sẽ mở link đó).

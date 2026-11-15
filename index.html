@@ -99,6 +99,16 @@ table.tl tr.grp td{background:#f1ebe0;font-weight:800;font-size:13px;text-align:
 
 nav a small{display:none}
 .edits{margin-left:auto;display:flex;gap:4px}
+.imgl{flex:none;display:block}
+.stops{margin:6px 0 0;padding-left:20px;font-size:13px}
+.stops li{margin:3px 0}
+.stops li span{margin-right:4px}
+.stops .mini{padding:1px 6px;font-size:11px}
+.splash{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center;padding:24px;background:linear-gradient(160deg,rgba(40,70,100,.88),rgba(90,140,90,.88)),var(--cover) center/cover;cursor:pointer;transition:opacity .4s}
+.splash.hide{opacity:0;pointer-events:none}
+.splash h1{font-family:Pangolin,cursive;font-size:clamp(36px,9vw,64px);margin:0}
+.splash .go{background:#fff;color:var(--ink);font-weight:800;padding:14px 26px;border-radius:999px;font-size:17px;box-shadow:0 6px 20px rgba(0,0,0,.25);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
 body:not(.editing) .edits,body:not(.editing) .addcard,body:not(.editing) [data-person],body:not(.editing) #du-lieu,body:not(.editing) #du-lieu + .box{display:none!important}
 .editchip{background:#fff7e0!important;border-color:#e9cf7a!important;color:#8a6400!important;display:flex!important;align-items:center}
 body.editing .editchip{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
@@ -268,6 +278,7 @@ body.editing .it{outline:2px dashed #e9cf7a;outline-offset:-2px}
     <label class="full">Ghi chú<textarea id="fNote" rows="2"></textarea></label>
     <label class="full">Ảnh (đường dẫn images/... hoặc link https)<input id="fImg" list="imgList"><datalist id="imgList"></datalist></label>
     <label class="full">…hoặc chọn ảnh từ máy (tự thu nhỏ, lưu thẳng vào txt)<input id="fFile" type="file" accept="image/*"></label>
+    <label class="full">Các điểm con (mỗi dòng 1 điểm, vd các điểm của tour)<textarea id="fStops" rows="3"></textarea></label>
     <label class="full chk2"><input type="checkbox" id="fDone"> Đã hoàn thành</label>
   </div>
   <div class="links" style="justify-content:flex-end"><button type="button" class="btn" id="mCancel">Huỷ</button><button class="btn" style="background:var(--ink);color:#fff">Lưu thẻ</button></div>
@@ -286,6 +297,7 @@ body.editing .it{outline:2px dashed #e9cf7a;outline-offset:-2px}
   <div class="links" style="justify-content:space-between"><button type="button" class="btn" id="pDel" style="color:#b03a5b">🗑️ Xoá</button><span><button type="button" class="btn" id="pCancel">Huỷ</button> <button class="btn" style="background:var(--ink);color:#fff">Lưu</button></span></div>
 </form></div>
 <div class="toast" id="toast"></div>
+<div class="splash hide" id="splash"><div style="font-size:42px">🎵</div><h1 id="spTitle">Đà Lạt</h1><div id="spDate"></div><div class="go">Chạm để vào &amp; bật nhạc</div><div style="font-size:12px;opacity:.85">Trình duyệt chỉ cho phát nhạc sau 1 lần chạm</div></div>
 <footer>Đà Lạt luôn là một ý hay! ♡</footer>
 
 <script type="text/plain" id="fallback"># =====================================================================
@@ -310,6 +322,8 @@ Poster = poster.png
 # Muốn nhạc riêng: bỏ file mp3 vào thư mục music/ rồi ghi, vd: Nhạc = music/bai-hat.mp3
 # Hoặc dán link YouTube/Spotify playlist: Nhạc = https://open.spotify.com/playlist/...
 Nhạc = music/music.mp3
+# Tự phát nhạc khi mở web: có / không
+Tự phát nhạc = có
 
 [THÀNH VIÊN]
 # Tên | Vai trò. Tổng chi phí nhóm = chi phí/người × số người.
@@ -322,13 +336,20 @@ Bạn 4 |
 # ---------------------------------------------------------------------
 # [NGÀY] Tên ngày | Chủ đề
 # Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh
+# Dòng bắt đầu bằng > ngay dưới 1 hoạt động = các điểm con (vd các điểm của tour)
 # ---------------------------------------------------------------------
 
 [NGÀY] Thứ 5 · 03/12 | Lên đường
 20:00 | Xe Phương Trang TP.HCM → Đà Lạt | 1100000 | 1100000 | Gồm vé xe khứ hồi + homestay 2 đêm. Tới Đà Lạt ~04:00 sáng | | images/bus2.jpg
 
 [NGÀY] Ngày 1 · Thứ Sáu 04/12 | Săn mây · Quán 2 Ơi · Tàu · Đồ nướng · Chợ đêm
-04:30 - 10:00 | Tour săn mây (5 điểm) | 200000 | 200000 | Đã gồm ăn sáng/cà phê tùy tour | | images/sanmay.jpg
+04:00 - 10:00 | Tour săn mây Phước Võ (6 điểm) | 199000 | 199000 | Trọn gói 199k/khách, cam kết không phát sinh. Gồm: xe ô tô đón trả tận nơi, ăn uống tự chọn, vé tham quan 6 điểm, hỗ trợ chụp hình/quay video, bay flycam. Hotline/Zalo: 0858.709.056 | | images/tour-sanmay-thumb.jpg
+> Săn mây cầu gỗ tại Cầu Đất
+> Đồi chè Cầu Đất
+> Tuabin điện gió khổng lồ
+> Vườn hồng treo gió
+> Nông trại hoa tinh dầu
+> Vườn dâu công nghệ cao
 10:00 - 11:30 | Quán 2 Ơi (ăn trưa) | 55000 | 100000 | Đặt bàn trước 2 ngày! Combo ~55k | 14bis Mai Hoa Thôn, P.2 (nay P. Xuân Hương) | images/lunch.jpg
 11:30 - 14:00 | Đi bộ + cà phê gần 2 Ơi | 30000 | 60000 | Tùy duyên tắp vô quán gần đó | | images/cafe.jpg
 14:00 - 16:15 | Check-in homestay, tắm rửa | | | Book taxi ra ga trước 16:15 | | images/house.jpg
@@ -431,11 +452,12 @@ function parse(txt) {
       if (sec === "NGÀY") { const [name, theme] = m[2].split("|").map(s => s.trim()); day = { name, theme, items: [] }; d.days.push(day); }
       continue;
     }
+    if (sec === "NGÀY" && day && line.startsWith(">")) { const last = day.items[day.items.length - 1]; if (last) last.stops.push(line.slice(1).trim()); continue; }
     const c = line.split("|").map(s => s.trim());
     if (sec === "CHUYẾN ĐI") { const i = line.indexOf("="); if (i > 0) d.trip[line.slice(0,i).trim()] = line.slice(i+1).trim(); }
     else if (sec === "THÀNH VIÊN") d.members.push({ name:c[0], role:c[1] || "", phone:"", addr:"" });
     else if (sec === "BẢO MẬT") { const i = line.indexOf("="); if (i > 0) d.secret = line.slice(i+1).trim(); }
-    else if (sec === "NGÀY" && day) day.items.push({ time:c[0], name:c[1], lo:num(c[2]), hi:num(c[3]) ?? num(c[2]), note:c[4] || "", addr:c[5] || "", img:c[6] || "", done:/^(x|1|xong|✓|☑|done)$/i.test(c[7] || "") });
+    else if (sec === "NGÀY" && day) day.items.push({ time:c[0], name:c[1], lo:num(c[2]), hi:num(c[3]) ?? num(c[2]), note:c[4] || "", addr:c[5] || "", img:c[6] || "", stops:[], done:/^(x|1|xong|✓|☑|done)$/i.test(c[7] || "") });
     else if (sec === "CHI PHÍ CHUNG") d.extra.push({ name:c[0], lo:num(c[1]), hi:num(c[2]) ?? num(c[1]), note:c[3] });
     else if (sec === "QUÁN ĂN") d.shops.push({ name:c[0], addr:c[1], note:c[2] });
     else if (sec === "LƯU Ý ĐỊA ĐIỂM") d.notes.push({ key:c[0], text:c[1], src:c[2] });
@@ -499,12 +521,13 @@ var render = function (d) {
       tableRows.push({ key, done, day: day.name.split("·")[0], time: it.time, name: it.name, pr, addr: it.addr });
       return `<div class="it${done ? " done" : ""}">
         <label class="tick" title="Đánh dấu hoàn thành"><input type="checkbox" data-key="${esc(key)}" ${done ? "checked" : ""}>Xong</label>
-        ${it.img ? `<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy" onerror="this.style.visibility='hidden'">` : ""}
+        ${it.img ? `<a class="imgl" href="${esc((it.img || "").replace("-thumb.", "."))}" target="_blank"><img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy" onerror="this.style.visibility='hidden'"></a>` : ""}
         <div class="tx"><div class="tm" style="color:${col}">${esc(it.time)}</div>
         <div class="tt">${esc(it.name)}</div>
         ${pr ? `<span class="pill">${pr}</span>` : ""}
         ${it.addr ? `<div class="addr">📍 ${esc(it.addr)}</div>` : ""}
         ${it.note ? `<div class="note">${esc(it.note)}</div>` : ""}
+        ${it.stops && it.stops.length ? `<ol class="stops">${it.stops.map(s => `<li><span>${esc(s)}</span><a class="mini" target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s + ", Đà Lạt")}">🗺️</a></li>`).join("")}</ol>` : ""}
         <div class="acts">
           ${it.addr ? `<button class="mini" style="border:0;cursor:pointer;font-family:inherit" data-map="${pid}">🗺️ Bản đồ + lưu ý ▾</button>` : ""}
           <span class="edits"><button class="ico" data-edit="${key}" title="Sửa">✏️</button><button class="ico" data-del="${key}" title="Xoá">🗑️</button></span>
@@ -585,10 +608,10 @@ function serialize(d) {
   for (const [k, v] of Object.entries(d.trip)) L.push(`${k} = ${v}`);
   L.push("", "[THÀNH VIÊN]", "# Tên | Vai trò   (SĐT + địa chỉ nhà được mã hoá ở mục [BẢO MẬT], nhập trên web)", ...d.members.map(m => row([clean(m.name), clean(m.role)])));
   if (d.secret) L.push("", "[BẢO MẬT]", "# Dữ liệu mã hoá AES-GCM bằng mật khẩu nhóm – đừng sửa tay", "data = " + d.secret);
-  L.push("", "# [NGÀY] Tên ngày | Chủ đề", "# Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh | Xong");
+  L.push("", "# [NGÀY] Tên ngày | Chủ đề", "# Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh | Xong", "# Dòng bắt đầu bằng > ngay dưới 1 hoạt động = các điểm con (vd các điểm của tour)");
   for (const day of d.days) {
     L.push("", `[NGÀY] ${row([clean(day.name), clean(day.theme)])}`);
-    for (const it of day.items) L.push(row([clean(it.time), clean(it.name), it.lo ?? "", it.hi ?? "", clean(it.note), clean(it.addr), clean(it.img), it.done ? "x" : ""].map(String)));
+    for (const it of day.items) { L.push(row([clean(it.time), clean(it.name), it.lo ?? "", it.hi ?? "", clean(it.note), clean(it.addr), clean(it.img), it.done ? "x" : ""].map(String))); (it.stops || []).forEach(s => L.push("> " + clean(s))); }
   }
   L.push("", "[CHI PHÍ CHUNG]", "# Tên khoản | Giá thấp/người | Giá cao/người | Ghi chú", ...d.extra.map(x => row([clean(x.name), String(x.lo ?? ""), String(x.hi ?? ""), clean(x.note)])));
   L.push("", "[QUÁN ĂN]", "# Tên quán | Địa chỉ | Ghi chú", ...d.shops.map(x => row([clean(x.name), clean(x.addr), clean(x.note)])));
@@ -614,11 +637,11 @@ function commit(msg) {
 let editing = null, pendingImg = "";
 function openEditor(di, ii) {
   editing = { di, ii }; pendingImg = "";
-  const it = ii >= 0 ? DATA.days[di].items[ii] : { time:"", name:"", lo:null, hi:null, note:"", addr:"", img:"", done:false };
+  const it = ii >= 0 ? DATA.days[di].items[ii] : { time:"", name:"", lo:null, hi:null, note:"", addr:"", img:"", stops:[], done:false };
   $("#mTitle").textContent = ii >= 0 ? "Sửa thẻ" : "Thêm thẻ mới";
   $("#fDay").innerHTML = DATA.days.map((d, k) => `<option value="${k}" ${k === di ? "selected" : ""}>${esc(d.name)}</option>`).join("");
   $("#fTime").value = it.time; $("#fName").value = it.name; $("#fLo").value = it.lo ?? ""; $("#fHi").value = it.hi != null && it.hi !== it.lo ? it.hi : "";
-  $("#fNote").value = it.note; $("#fAddr").value = it.addr; $("#fImg").value = it.img.startsWith("data:") ? "(ảnh đã tải lên)" : it.img; $("#fDone").checked = it.done; $("#fFile").value = "";
+  $("#fNote").value = it.note; $("#fAddr").value = it.addr; $("#fImg").value = it.img.startsWith("data:") ? "(ảnh đã tải lên)" : it.img; $("#fDone").checked = it.done; $("#fFile").value = ""; $("#fStops").value = (it.stops || []).join("\n");
   $("#imgList").innerHTML = [...new Set(DATA.days.flatMap(d => d.items.map(x => x.img)).filter(x => x && !x.startsWith("data:")))].map(x => `<option value="${esc(x)}">`).join("");
   $("#modal").classList.add("open"); setTimeout(() => $("#fName").focus(), 50);
 }
@@ -638,7 +661,8 @@ $("#editForm").onsubmit = e => {
   const lo = num($("#fLo").value), hi = num($("#fHi").value) ?? lo;
   const imgVal = $("#fImg").value.trim();
   const it = { time: $("#fTime").value.trim(), name: $("#fName").value.trim(), lo, hi, note: $("#fNote").value.trim(), addr: $("#fAddr").value.trim(),
-    img: pendingImg || (imgVal === "(ảnh đã tải lên)" ? (old ? old.img : "") : imgVal), done: $("#fDone").checked };
+    img: pendingImg || (imgVal === "(ảnh đã tải lên)" ? (old ? old.img : "") : imgVal), done: $("#fDone").checked,
+    stops: $("#fStops").value.split("\n").map(s => s.trim()).filter(Boolean) };
   if (old) DATA.days[di].items.splice(ii, 1);
   const nd = +$("#fDay").value; DATA.days[nd].items.push(it);
   $("#modal").classList.remove("open"); curDay = nd; commit(old ? "Đã lưu thay đổi" : "Đã thêm thẻ");
@@ -867,6 +891,24 @@ $("#music").onclick = () => {
     }
   } catch (e) { $("#musicTxt").textContent = "Trình duyệt chặn âm thanh"; }
 };
+// ===== Tự phát nhạc khi mở web =====
+function musicOn() { return $("#music").classList.contains("on"); }
+async function tryAutoplay() {
+  const t = (DATA && DATA.trip) || {};
+  if (/^(không|khong|no|tắt|0)$/i.test((t["Tự phát nhạc"] || "").trim())) return;
+  if (musicSrc && !/^https?:\/\//i.test(musicSrc) || /\.(mp3|m4a|ogg|wav)(\?|$)/i.test(musicSrc)) {
+    audioEl = audioEl || Object.assign(new Audio(musicSrc), { loop: true, volume: 0.6 });
+    try { await audioEl.play(); $("#music").classList.add("on"); $("#musicTxt").textContent = "Tắt nhạc"; return; } catch (e) {}
+  } else if (musicSrc) return;
+  // Bị chặn tự phát -> màn hình chào, chạm 1 lần là phát
+  const sp = $("#splash");
+  sp.style.setProperty("--cover", t["Ảnh bìa"] ? `url("${t["Ảnh bìa"]}")` : "none");
+  $("#spTitle").textContent = t["Tên"] || ""; $("#spDate").textContent = t["Ngày"] || "";
+  sp.classList.remove("hide");
+  const go = () => { sp.classList.add("hide"); if (!musicOn()) $("#music").click(); ["pointerdown", "keydown"].forEach(ev => document.removeEventListener(ev, go, true)); };
+  sp.onclick = go; ["pointerdown", "keydown"].forEach(ev => document.addEventListener(ev, go, { once: true, capture: true }));
+}
+(function waitData() { if (DATA) tryAutoplay(); else setTimeout(waitData, 100); })();
 </script>
 </body>
 </html>

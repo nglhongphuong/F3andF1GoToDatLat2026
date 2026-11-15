@@ -20,6 +20,8 @@ Poster = poster.png
 # Muốn nhạc riêng: bỏ file mp3 vào thư mục music/ rồi ghi, vd: Nhạc = music/bai-hat.mp3
 # Hoặc dán link YouTube/Spotify playlist: Nhạc = https://open.spotify.com/playlist/...
 Nhạc = music/music.mp3
+# Tự phát nhạc khi mở web: có / không
+Tự phát nhạc = có
 
 [THÀNH VIÊN]
 # Tên | Vai trò. Tổng chi phí nhóm = chi phí/người × số người.
@@ -32,13 +34,20 @@ Bạn 4 |
 # ---------------------------------------------------------------------
 # [NGÀY] Tên ngày | Chủ đề
 # Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh
+# Dòng bắt đầu bằng > ngay dưới 1 hoạt động = các điểm con (vd các điểm của tour)
 # ---------------------------------------------------------------------
 
 [NGÀY] Thứ 5 · 03/12 | Lên đường
 20:00 | Xe Phương Trang TP.HCM → Đà Lạt | 1100000 | 1100000 | Gồm vé xe khứ hồi + homestay 2 đêm. Tới Đà Lạt ~04:00 sáng | | images/bus2.jpg
 
 [NGÀY] Ngày 1 · Thứ Sáu 04/12 | Săn mây · Quán 2 Ơi · Tàu · Đồ nướng · Chợ đêm
-04:30 - 10:00 | Tour săn mây (5 điểm) | 200000 | 200000 | Đã gồm ăn sáng/cà phê tùy tour | | images/sanmay.jpg
+04:00 - 10:00 | Tour săn mây Phước Võ (6 điểm) | 199000 | 199000 | Trọn gói 199k/khách, cam kết không phát sinh. Gồm: xe ô tô đón trả tận nơi, ăn uống tự chọn, vé tham quan 6 điểm, hỗ trợ chụp hình/quay video, bay flycam. Hotline/Zalo: 0858.709.056 | | images/tour-sanmay-thumb.jpg
+> Săn mây cầu gỗ tại Cầu Đất
+> Đồi chè Cầu Đất
+> Tuabin điện gió khổng lồ
+> Vườn hồng treo gió
+> Nông trại hoa tinh dầu
+> Vườn dâu công nghệ cao
 10:00 - 11:30 | Quán 2 Ơi (ăn trưa) | 55000 | 100000 | Đặt bàn trước 2 ngày! Combo ~55k | 14bis Mai Hoa Thôn, P.2 (nay P. Xuân Hương) | images/lunch.jpg
 11:30 - 14:00 | Đi bộ + cà phê gần 2 Ơi | 30000 | 60000 | Tùy duyên tắp vô quán gần đó | | images/cafe.jpg
 14:00 - 16:15 | Check-in homestay, tắm rửa | | | Book taxi ra ga trước 16:15 | | images/house.jpg
