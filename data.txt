@@ -1,0 +1,119 @@
+# =====================================================================
+#  FILE DỮ LIỆU CHUYẾN ĐI – sửa file này, lưu lại là web tự cập nhật
+# =====================================================================
+#  - Dòng bắt đầu bằng # là ghi chú, web bỏ qua.
+#  - Các cột ngăn cách bằng dấu  |
+#  - Giá ghi số liền, KHÔNG dấu chấm (vd 200000). Miễn phí ghi 0.
+#    Chưa biết giá thì để trống. Giá cố định thì ghi 2 cột giống nhau.
+#  - Ảnh: đường dẫn trong thư mục images/ hoặc link ảnh https://...
+#  - Địa chỉ có thì web tự tạo nút Google Map + nút tìm ảnh Google.
+# =====================================================================
+
+[CHUYẾN ĐI]
+Tên = Đà Lạt 3 ngày 2 đêm
+Ngày = 03/12 (Thứ 5) – 06/12/2026 (CN)
+Slogan = Đi để thấy · Ăn để nhớ · Chụp để lưu
+Ảnh bìa = images/cover.jpg
+Excel = DaLat_3N2D_timeline.xlsx
+Poster = poster.png
+# Nhạc nền: để trống = nhạc lofi tự phát sinh trong web (không cần file).
+# Muốn nhạc riêng: bỏ file mp3 vào thư mục music/ rồi ghi, vd: Nhạc = music/bai-hat.mp3
+# Hoặc dán link YouTube/Spotify playlist: Nhạc = https://open.spotify.com/playlist/...
+Nhạc = music/music.mp3
+
+[THÀNH VIÊN]
+# Tên | Vai trò. Tổng chi phí nhóm = chi phí/người × số người.
+# SĐT + địa chỉ nhà nhập trên web, được mã hoá vào mục [BẢO MẬT].
+Kiệt | Lên kế hoạch
+Thảo Zân |
+Bạn 3 |
+Bạn 4 |
+
+# ---------------------------------------------------------------------
+# [NGÀY] Tên ngày | Chủ đề
+# Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh
+# ---------------------------------------------------------------------
+
+[NGÀY] Thứ 5 · 03/12 | Lên đường
+20:00 | Xe Phương Trang TP.HCM → Đà Lạt | 1100000 | 1100000 | Gồm vé xe khứ hồi + homestay 2 đêm. Tới Đà Lạt ~04:00 sáng | | images/bus2.jpg
+
+[NGÀY] Ngày 1 · Thứ Sáu 04/12 | Săn mây · Quán 2 Ơi · Tàu · Đồ nướng · Chợ đêm
+04:30 - 10:00 | Tour săn mây (5 điểm) | 200000 | 200000 | Đã gồm ăn sáng/cà phê tùy tour | | images/sanmay.jpg
+10:00 - 11:30 | Quán 2 Ơi (ăn trưa) | 55000 | 100000 | Đặt bàn trước 2 ngày! Combo ~55k | 14bis Mai Hoa Thôn, P.2 (nay P. Xuân Hương) | images/lunch.jpg
+11:30 - 14:00 | Đi bộ + cà phê gần 2 Ơi | 30000 | 60000 | Tùy duyên tắp vô quán gần đó | | images/cafe.jpg
+14:00 - 16:15 | Check-in homestay, tắm rửa | | | Book taxi ra ga trước 16:15 | | images/house.jpg
+16:30 - 17:45 | Ga Đà Lạt → Trại Mát (tàu DL10) | 80000 | 100000 | 16:30 xuất phát (40p di chuyển + mua vé), tàu chạy 17:10 | Ga Đà Lạt, 1 Quang Trung, P.10 (nay P. Xuân Hương) | images/train.jpg
+17:45 - 19:15 | Tiệm nướng Xóm Lèo / Chạng Vạng | 200000 | 300000 | Taxi từ Trại Mát. Đặt bàn trước, mở từ 16:00 | 113 Huỳnh Tấn Phát, P.11 (nay P. Xuân Trường) | images/bbq.jpg
+19:30 - 21:00 | Chợ đêm Đà Lạt | 50000 | 100000 | Bánh tráng nướng, khoai lang nướng, sữa đậu nành | Nguyễn Thị Minh Khai, P.1 (nay P. Xuân Hương) | images/market.jpg
+22:00 | Nghỉ đêm 1: Homestay | | | Gần Cam Ly / trung tâm | | images/room1.jpg
+
+[NGÀY] Ngày 2 · Thứ Bảy 05/12 | Ngắm sương · Puppy Farm · Đồi cỏ hồng · Lẩu gà
+06:00 - 06:40 | Đồi Ngô Quyền (ngắm sương) | 0 | 0 | | Cuối đường Ngô Quyền, P.6 (nay P. Cam Ly) | images/ngoquyen.jpg
+06:45 - 07:30 | Bánh mì xíu mại Bé Linh | 20000 | 35000 | | Góc Hoàng Diệu & Trần Nhật Duật, P.5 (nay P. Cam Ly) | images/banhmi.jpg
+08:00 - 11:15 | Puppy Farm | 100000 | 100000 | Mở 7:30 - 17:30 | Đường Cam Ly, thôn Măng Lin, P.7 (nay P. Lang Biang) | images/puppy.jpg
+11:45 - 12:00 | Bánh căn Bé Hoa | 30000 | 50000 | | 36 Trần Nhật Duật, P.5 (nay P. Cam Ly) | images/banhcan.jpg
+12:00 - 15:30 | Ngủ trưa ở homestay | | | Sạc pin cho buổi chiều | | images/bed.jpg
+15:45 - 17:45 | Đồi cỏ hồng – Hồ Tuyền Lâm | 60000 | 60000 | 15:45 đi → 16:15 tới → 17:00 chụp hoàng hôn. Vé ~60k (có nơi ghi miễn phí) | Gò Đá Hoa Vàng, Hồ Tuyền Lâm, P.3 (nay P. Xuân Hương) | images/sanmay.jpg
+18:00 - 19:30 | Lẩu gà lá é Tao Ngộ | 150000 | 250000 | | 70A 3 Tháng 2, P.1 (nay P. Xuân Hương) | images/lau.jpg
+19:30 - 21:30 | Hồ Xuân Hương + Tháp VinaPhone | 0 | 0 | Dạo hồ, mua quà (nếu còn sức) | Trần Quốc Toản, P.1 (nay P. Xuân Hương) | images/hxh.jpg
+22:00 | Nghỉ đêm 2: Homestay | | | Ngủ sớm 22:00 - 23:00 | | images/room1.jpg
+
+[NGÀY] Ngày 3 · Chủ Nhật 06/12 | Ăn local · Iyashi · Về Sài Gòn
+06:30 - 07:30 | Ăn sáng món local | 40000 | 70000 | Phở / bánh ướt lòng gà / bánh căn... xem list quán | | images/banhuot.jpg
+07:40 - 09:00 | Iyashi / Quê Garden | 80000 | 120000 | Thảo Zân đi nhà thờ | 868 Cam Ly, P.5 (nay P. Cam Ly) | images/iyashi.jpg
+09:00 - 11:30 | Kem Phụng + đặc sản, trả phòng | 50000 | 100000 | Gửi hành lý nếu cần | 97A Nguyễn Văn Trỗi, P.2 (nay P. Xuân Hương) | images/room3.jpg
+11:30 - 12:30 | Ăn nhẹ, ra bến xe | 50000 | 100000 | Đi taxi | | images/bus1.jpg
+14:00 | Xe Phương Trang về TP.HCM | | | Đã gồm trong vé khứ hồi | Bến xe liên tỉnh, 01 Tô Hiến Thành, P.3 (nay P. Xuân Hương) | images/bus2.jpg
+
+[CHI PHÍ CHUNG]
+# Tên khoản | Giá thấp/người | Giá cao/người | Ghi chú
+Taxi cả chuyến | 250000 | 400000 | Chia 4 người
+Quà, chi phí phát sinh | 150000 | 250000 |
+
+[QUÁN ĂN]
+# Tên quán | Địa chỉ | Ghi chú
+Quán 2 Ơi | 14bis Mai Hoa Thôn, P.2 | Cơm trưa, đặt trước
+Bánh căn Bé Hoa | 36 Trần Nhật Duật, P.5 |
+Quán phở King | 14 Trần Bình Trọng, P.5 |
+Bún bò Bà Ba | 234 Hai Bà Trưng, P.6 |
+Bánh mì xíu mại Bé Linh | Góc Hoàng Diệu & Trần Nhật Duật, P.5 |
+Bún cá tầm A Huy | 21 Yersin, P.10 |
+Bánh cuốn tôm thịt Chị Em | 1/8 Thông Thiên Học, P.2 |
+Bún mắm miền Tây | 37 Trần Nhật Duật, P.5 |
+Phở atiso Atispho | Lô H19 Phạm Hồng Thái, P.10 |
+Bánh ướt lòng gà | Đường Tăng Bạt Hổ, P.1 |
+Lẩu gà lá é Tao Ngộ | 70A 3 Tháng 2, P.1 |
+Tiệm nướng Xóm Lèo | 113 Huỳnh Tấn Phát, P.11 |
+Chạng Vạng Coffee & BBQ | 119 Huỳnh Tấn Phát, P.11 |
+Kem Phụng | 97A Nguyễn Văn Trỗi, P.2 |
+Yaourt phô mai | 48 Khe Sanh, P.10 |
+Lẩu cá tầm | | Chọn quán sau
+
+[LƯU Ý ĐỊA ĐIỂM]
+# Hiện trong ô "Lưu ý khi vô tiệm" dưới bản đồ. Chỉ ghi điều có nguồn – dán link nguồn ở cột 3.
+# Tên địa điểm (gõ 1 phần tên là được) | Lưu ý | Link nguồn
+Bánh mì xíu mại Bé Linh | Chỉ bán buổi sáng (~6:00 - 10:00). Ngày đông có thể hết từ ~9h, nên đến sớm | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Bánh mì xíu mại Bé Linh | Có 2 chi nhánh 26 và 37 Hoàng Diệu. Số 37 rộng, có bãi đậu xe, hợp đi nhóm; số 26 nhỏ, ngồi ngoài trời | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Bánh mì xíu mại Bé Linh | Không ăn cay thì dặn trước bớt sa tế. Giá bài viết ghi: 15.000đ/phần | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Lẩu gà lá é Tao Ngộ | Bài tổng hợp chi nhánh KHÔNG có địa chỉ 70A 3 Tháng 2 → gọi xác nhận trước. Chi nhánh được liệt kê: 60 Phạm Ngũ Lão P.3, 30 Bùi Thị Xuân P.2, 10 đường 3/4 P.3, 89 Hai Bà Trưng P.6, 33 Phù Đổng Thiên Vương P.8, 28b Hải Thượng P.6, 64 Phan Chu Trinh P.9 | https://mia.vn/cam-nang-du-lich/quan-lau-ga-la-e-tao-ngo-da-lat-16331
+Lẩu gà lá é Tao Ngộ | Chi nhánh 89 Hai Bà Trưng: nồi ~200k cho 2 người. Chi nhánh 28b Hải Thượng đông vào giờ cao điểm | https://mia.vn/cam-nang-du-lich/quan-lau-ga-la-e-tao-ngo-da-lat-16331
+Xóm Lèo | Mở 16:00 - 22:00, nằm trong khu vườn rau Trại Mát, đường Huỳnh Tấn Phát | https://mia.vn/cam-nang-du-lich/tiem-nuong-xom-leo-14084
+Chạng Vạng | 119 Huỳnh Tấn Phát, P.11. Khu BBQ mở 16:00 - 22:00, khu cà phê 7:30 - 22:00 | https://mia.vn/cam-nang-du-lich/kham-pha-chang-vang-coffee-bbq-18716
+Puppy Farm | Mở 7:30 - 17:30 mỗi ngày. Vé người lớn 100k, trẻ 1m2 - 1m4: 50k | https://mia.vn/cam-nang-du-lich/puppy-farm-da-lat-18863
+Đồi cỏ hồng | Nằm trong phim trường Gò Đá Hoa Vàng. Bài viết ghi vé miễn phí; cỏ hồng có từ đầu tháng 11, tàn vào tháng 12 | https://vinwonders.com/vi/wonderpedia/news/doi-co-hong-da-lat/
+Quán 2 Ơi | Review trên trang tổng hợp nhắc combo cơm ~55k | https://local.haogiayensao.com/lamdong/?food=quan+2oi%21+-+da+lat+lunch
+Quê Garden | Địa chỉ 868 Cam Ly, phường Cam Ly - Đà Lạt | https://mia.vn/cam-nang-du-lich/que-garden-da-lat-tieu-vuong-quoc-nhat-ban-mong-mo-tren-deo-mimosa-1422
+
+[MẠNG XÃ HỘI]
+# Trang chính thức đã tìm thấy. Tên địa điểm | Mạng | Link
+Quán 2 Ơi | Instagram @quan2oi | https://www.instagram.com/quan2oi/
+Quán 2 Ơi | Facebook | https://www.facebook.com/bialanhcomtruua2oi/
+
+[LƯU Ý]
+🚕 Taxi: gom điểm cùng tuyến, ~70k - 150k/chuyến
+🛵 Xe máy: 2 xe/4 người, ~120k - 180k/ngày
+🧥 Mang theo: áo khoác, giày thể thao, áo mưa mỏng, sạc dự phòng
+📞 Đặt bàn: Quán 2 Ơi (trước 2 ngày), Xóm Lèo / Chạng Vạng
+🌤️ Kiểm tra: thời tiết, lịch tàu DL10, cỏ hồng còn nở không
+🗺️ Phường cũ → mới: P.1, 2, 3, 10 → Xuân Hương · P.5, 6 → Cam Ly · P.7 → Lang Biang · P.11 → Xuân Trường
+⏰ Ngày 3 (06/12): 7:00 sáng nhớ dậy sớm nha bà!

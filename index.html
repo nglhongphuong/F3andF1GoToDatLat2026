@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3d6a8f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Đà Lạt 3N2Đ">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<link rel="icon" href="images/icon-192.png">
+<title>Đà Lạt 3 ngày 2 đêm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Pangolin&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#22324f;--mute:#6b7690;--bg:#f8f3ea;--card:#fffdf8;--pink:#e2799a;--green:#5f9e6e;--blue:#4f8bc9;--gold:#d39b3a;--purple:#8a6bbf}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Be Vietnam Pro",Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px 40px}
+.hero{position:relative;color:#fff;padding:56px 16px 46px;text-align:center;background:linear-gradient(160deg,#3d6a8f,#7aa66a);overflow:hidden}
+.hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.35;filter:saturate(1.2)}
+.hero *{position:relative}
+.hero h1{font-family:Pangolin,cursive;font-size:clamp(38px,8vw,64px);margin:0;letter-spacing:1px;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.hero .date{display:inline-block;margin-top:8px;background:rgba(255,255,255,.92);color:#c9547a;font-weight:700;padding:6px 16px;border-radius:999px}
+.hero .slogan{font-family:Pangolin,cursive;font-size:20px;margin-top:10px}
+.links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;border:0;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.btn.ghost{background:rgba(255,255,255,.18);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.6)}
+nav{position:sticky;top:0;z-index:5;background:rgba(248,243,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid #eadfcd}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 16px}
+nav a{white-space:nowrap;text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid #eadfcd}
+h2{font-size:22px;margin:30px 0 12px;display:flex;align-items:center;gap:10px}
+h2 .tag{color:#fff;font-size:14px;padding:4px 12px;border-radius:999px}
+.theme{color:var(--mute);font-size:14px;margin:-6px 0 14px}
+.grid{display:grid;align-items:start;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.it{display:flex;gap:12px;background:var(--card);border-radius:14px;padding:10px;border:1px solid #efe6d6;box-shadow:0 1px 4px rgba(80,60,40,.06);transition:.2s}
+.it.done{opacity:.55}
+.it.done .tt{text-decoration:line-through}
+.it img{width:108px;height:84px;object-fit:cover;border-radius:10px;flex:none;background:#eee}
+.tx{flex:1;min-width:0}
+.tm{font-size:12px;font-weight:700}
+.tt{font-weight:700;font-size:15px;margin:1px 0 4px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:1px 9px;border-radius:999px;background:#fde2e7;color:#b03a5b}
+.note{font-size:12.5px;color:var(--mute);margin-top:4px}
+.addr{font-size:12.5px;margin-top:3px}
+.acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center}
+.mini{font-size:12px;text-decoration:none;padding:3px 9px;border-radius:999px;background:#eef3fa;color:#285f99;font-weight:600}
+.mini.img{background:#f1ecfa;color:#6a4a9c}
+.box{background:var(--card);border-radius:16px;padding:16px;border:1px solid #efe6d6}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:7px 6px;border-bottom:1px dashed #e3dacb;text-align:left;vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap}
+.total{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.total div{background:#fde2e7;color:#b03a5b;border-radius:12px;padding:10px 14px;font-weight:700}
+.total small{display:block;font-weight:500;color:#9a5a70}
+.members{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.members span{background:#e2f2e5;color:#2f7343;padding:5px 12px;border-radius:999px;font-weight:600;font-size:13px}
+.shops{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.shop{background:var(--card);border:1px solid #efe6d6;border-radius:12px;padding:10px 12px}
+.shop b{display:block}
+.tips li{margin:6px 0}
+.progress{height:8px;background:#eadfcd;border-radius:9px;overflow:hidden;margin-top:10px}
+.progress i{display:block;height:100%;background:var(--green);width:0;transition:.3s}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:24px 16px 40px;font-family:Pangolin,cursive}
+.err{background:#fff3cd;border:1px solid #e9cf7a;padding:10px 14px;border-radius:12px;margin:14px 0;font-size:14px}
+
+.it{position:relative;padding-left:52px}
+.tick{position:absolute;left:0;top:0;bottom:0;width:44px;border-right:1px dashed #e3dacb;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:9.5px;color:var(--mute);cursor:pointer;border-radius:14px 0 0 14px}
+.tick input{width:20px;height:20px;accent-color:var(--green);cursor:pointer}
+.it.done .tick{background:#e2f2e5;color:#2f7343}
+.it{flex-wrap:wrap}
+.mapbox{flex-basis:100%;margin-top:8px;display:none}
+.mapbox.open{display:block}
+.mapbox iframe{width:100%;height:230px;border:0;border-radius:12px;background:#e9eef2}
+.maplinks{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+details.tips2{background:#fbf6ee;border:1px solid #efe6d6;border-radius:10px;padding:6px 10px;font-size:13px;margin-top:6px}
+details.tips2 summary{cursor:pointer;font-weight:600}
+details.tips2 li{margin:4px 0}
+details.tips2 .src{font-size:11.5px;color:#285f99}
+.soc{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.soc a{font-size:12px;text-decoration:none;padding:3px 9px;border-radius:999px;background:#fff;border:1px solid #e3dacb}
+.view{display:flex;gap:6px;margin:18px 0 0}
+.view button{border:1px solid #e3dacb;background:#fff;padding:7px 14px;border-radius:999px;font-weight:600;cursor:pointer;font-family:inherit}
+.view button.on{background:var(--ink);color:#fff}
+table.tl td:first-child,table.tl th:first-child{width:44px;text-align:center}
+table.tl input{width:18px;height:18px;accent-color:var(--green)}
+table.tl tr.done td{opacity:.5;text-decoration:line-through}
+.tbl{overflow-x:auto}
+table.tl tr.grp td{background:#f1ebe0;font-weight:800;font-size:13px;text-align:left!important;border-radius:8px;padding:8px 10px}
+.music{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 16px;font:600 14px "Be Vietnam Pro",Inter,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+.music .eq{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+.music .eq i{width:3px;background:#f6c1cf;height:4px;border-radius:2px}
+.music.on .eq i{animation:eq .9s infinite ease-in-out}
+.music.on .eq i:nth-child(2){animation-delay:.2s}.music.on .eq i:nth-child(3){animation-delay:.45s}
+@keyframes eq{0%,100%{height:3px}50%{height:14px}}
+@media (max-width:520px){.it img{width:86px;height:70px}.grid{grid-template-columns:1fr}}
+
+nav a small{display:none}
+.edits{margin-left:auto;display:flex;gap:4px}
+body:not(.editing) .edits,body:not(.editing) .addcard,body:not(.editing) [data-person],body:not(.editing) #du-lieu,body:not(.editing) #du-lieu + .box{display:none!important}
+.editchip{background:#fff7e0!important;border-color:#e9cf7a!important;color:#8a6400!important;display:flex!important;align-items:center}
+body.editing .editchip{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+.editbar{display:none;position:sticky;top:52px;z-index:4;margin:10px 0 0;background:#fff7e0;border:1px solid #e9cf7a;color:#6b5000;border-radius:12px;padding:8px 12px;font-size:13.5px;align-items:center;gap:8px}
+body.editing .editbar{display:flex}
+.editbar .btn{margin-left:auto;padding:6px 12px;font-size:13px;background:var(--green);color:#fff}
+body.editing .it{outline:2px dashed #e9cf7a;outline-offset:-2px}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.person{background:#fff;border:1px solid #efe6d6;border-radius:14px;padding:12px;display:flex;gap:10px;align-items:flex-start}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;flex:none}
+.person .role{display:inline-block;font-size:11.5px;font-weight:600;background:#efe7fa;color:#6a4a9c;border-radius:999px;padding:1px 8px;margin:2px 0 4px}
+.person .line{font-size:13px;margin-top:2px;word-break:break-word}
+.lockbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;font-size:13.5px}
+.lockbar input{font:14px inherit;padding:8px 10px;border:1px solid #e3dacb;border-radius:10px;min-width:180px}
+.ico{border:0;background:#f4efe6;border-radius:999px;padding:5px 9px;cursor:pointer;font-size:12px;font-family:inherit}
+.ico.sure{background:#f8d0d8;color:#b03a5b;font-weight:700}
+.addcard{border:2px dashed #d9cfbf;background:transparent;border-radius:14px;padding:16px;font:600 14px "Be Vietnam Pro",Inter,sans-serif;color:var(--mute);cursor:pointer;min-height:60px}
+.addcard:hover{background:#fff}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(20,25,40,.45);display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.sheet{background:#fffdf8;width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:18px 16px calc(16px + env(safe-area-inset-bottom))}
+@media (min-width:701px){.modal{align-items:center}.sheet{border-radius:20px}}
+.sheet h3{margin:0 0 12px}
+.form2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form2 label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:600;color:var(--mute)}
+.form2 .full{grid-column:1/-1}
+.form2 input,.form2 select,.form2 textarea{font:15px "Be Vietnam Pro",Inter,sans-serif;padding:10px 12px;border:1px solid #e3dacb;border-radius:10px;background:#fff;color:var(--ink);width:100%}
+.form2 .chk2{flex-direction:row;align-items:center;gap:8px;font-size:14px}
+.form2 .chk2 input{width:20px;height:20px}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.draft{background:#fff3cd;border:1px solid #e9cf7a;padding:10px 14px;border-radius:12px;margin:14px 0;font-size:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.draft.ok{background:#e2f2e5;border-color:#a9d3b0}
+.draft .btn{padding:6px 12px;font-size:13px}
+.tabbar{display:none}
+.swipehint{display:none}
+@media (max-width:700px){
+  body{padding-bottom:calc(74px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
+  .wrap{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .hero{padding:calc(26px + env(safe-area-inset-top)) 14px 22px}
+  .hero h1{font-size:34px}
+  .hero .date{font-size:13px;padding:4px 12px}
+  .hero .slogan{font-size:15px;margin-top:6px}
+  .links{margin-top:12px;gap:6px}
+  .links .btn{font-size:12.5px;padding:7px 11px}
+  .links .ghost{display:none}
+  nav{top:0;padding-top:env(safe-area-inset-top)}
+  nav .wrap{gap:6px;padding:8px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}
+  nav .wrap::-webkit-scrollbar{display:none}
+  nav a{scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;line-height:1.15;padding:6px 14px;font-size:13px}
+  nav a small{display:block;font-size:10px;font-weight:500;color:var(--mute)}
+  nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  nav a.on small{color:#cdd6e6}
+  nav a[href^="#chi"],nav a[href^="#quan"],nav a[href^="#luu"],nav a[href^="#thanh"]{display:none}
+  .view{display:none}
+  .day{display:none;animation:fade .25s ease}
+  .day.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
+  .swipehint{display:block;text-align:center;font-size:11.5px;color:var(--mute);margin:10px 0 0}
+  h2{font-size:18px;margin:16px 0 8px}
+  .theme{font-size:12.5px;margin-bottom:10px}
+  .grid{grid-template-columns:1fr;gap:10px}
+  .it{padding:10px 10px 10px 50px;border-radius:16px}
+  .tick{width:42px}
+  .tick input{width:24px;height:24px}
+  .it img{width:84px;height:70px;border-radius:12px}
+  .tt{font-size:15px}
+  .mini{font-size:12.5px;padding:7px 11px}
+  .mapbox iframe{height:240px}
+  .maplinks .mini{flex:1;text-align:center;justify-content:center}
+  details.tips2 summary{padding:6px 0}
+  .soc a{padding:7px 12px;font-size:13px}
+  table.tl th:nth-child(2),table.tl td:nth-child(2),table.tl th:nth-child(6),table.tl td:nth-child(6){display:none}
+  table.tl{font-size:13px} table.tl input{width:22px;height:22px}
+  .box{padding:12px;border-radius:14px}
+  #costTable{font-size:13px} #costTable th:nth-child(2),#costTable td:nth-child(2),#costTable th:nth-child(4),#costTable td:nth-child(4){display:none}
+  .total{grid-template-columns:1fr 1fr;gap:8px} .total div{font-size:13px;padding:9px 10px}
+  .members span{font-size:12px}
+  .shops{grid-template-columns:1fr}
+  .music{display:none}
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,253,248,.97);backdrop-filter:blur(10px);border-top:1px solid #eadfcd;padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .tabbar button{flex:1;border:0;background:none;font:600 10px "Be Vietnam Pro",Inter,sans-serif;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;border-radius:12px}
+  .tabbar button span{font-size:20px;line-height:1}
+  .tabbar button.on{color:var(--ink);background:#f1ebe0}
+  #tabMusic.playing span{animation:bounce 1s infinite}
+  @keyframes bounce{50%{transform:translateY(-3px)}}
+  footer{padding-bottom:20px}
+}
+</style>
+</head>
+<body>
+<header class="hero"><div class="bg" id="heroBg"></div>
+  <h1 id="title">Đà Lạt</h1>
+  <div class="date" id="dates"></div>
+  <div class="slogan" id="slogan"></div>
+  <div class="links" id="topLinks"></div>
+</header>
+<nav><div class="wrap" id="nav"></div></nav>
+<main class="wrap">
+  <div class="editbar" id="editbar">✏️ Đang chỉnh sửa: thêm, sửa, xoá thẻ &amp; người tham gia<button class="btn" data-toggle-edit>✅ Xong</button></div>
+  <div id="msg"></div>
+  <div class="view"><button id="vCard" class="on">🗂️ Dạng thẻ</button><button id="vTable">📋 Dạng bảng (có cột tick)</button></div>
+  <div id="days"></div>
+  <div class="swipehint" id="swipehint">← Vuốt ngang để đổi ngày →</div>
+  <div id="table" class="box tbl" style="display:none;margin-top:16px"></div>
+
+  <h2 id="chi-phi">💰 Chi phí dự kiến</h2>
+  <div class="box">
+    <table id="costTable"></table>
+    <div class="total" id="totals"></div>
+    <div class="members" id="members"></div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="note" id="progressText"></div>
+  </div>
+
+  <h2 id="quan-an">📍 Địa chỉ quán ăn</h2>
+  <div class="shops" id="shops"></div>
+
+  <h2 id="luu-y">📝 Phương tiện &amp; lưu ý</h2>
+  <div class="box"><ul class="tips" id="tips"></ul></div>
+
+  <h2 id="thanh-vien">👥 Người tham gia</h2>
+  <div class="box">
+    <div id="lockBar"></div>
+    <div class="people" id="people"></div>
+    <button class="addcard" id="addPerson" style="width:100%;margin-top:10px">＋ Thêm người</button>
+    <div class="note" style="margin-top:8px">🔒 Tên + vai trò lưu công khai trong data.txt. <b>SĐT và địa chỉ nhà được mã hoá</b> bằng mật khẩu nhóm trước khi lưu, người ngoài mở web/GitHub chỉ thấy chuỗi mã hoá.</div>
+  </div>
+
+  <h2 id="du-lieu">🗄️ Dữ liệu (data.txt)</h2>
+  <div class="box">
+    <div class="note">Mọi thay đổi (thêm/sửa/xoá thẻ, tick xong, thành viên...) đều ghi vào <b>data.txt</b>. Refresh vẫn còn vì bản nháp được giữ trong máy. Bấm <b>Lưu lên GitHub</b> để ghi thẳng vào file data.txt trên repo, cả nhóm cùng thấy.</div>
+    <div class="links" style="justify-content:flex-start">
+      <button class="btn" id="btnSave" style="background:var(--green);color:#fff">💾 Lưu lên GitHub</button>
+      <button class="btn" id="btnDl">⬇️ Tải data.txt</button>
+      <button class="btn" id="btnCopy">📋 Copy nội dung</button>
+      <button class="btn" id="btnRaw">📝 Sửa toàn bộ txt</button>
+      <a class="btn" href="#thanh-vien">👥 Người tham gia</a>
+      <label class="btn">📂 Nạp data.txt<input type="file" id="file" accept=".txt" hidden></label>
+      <button class="btn" id="btnReset">↩️ Bỏ thay đổi</button>
+    </div>
+    <details class="tips2" style="margin-top:12px"><summary>⚙️ Kết nối GitHub (làm 1 lần)</summary>
+      <div class="note" style="margin:6px 0">Tạo token: GitHub → Settings → Developer settings → Fine-grained tokens → chỉ chọn repo này, quyền <b>Contents: Read and write</b>. Token chỉ lưu trong trình duyệt của bạn, đừng chia sẻ.</div>
+      <div class="form2"><label>Tài khoản GitHub<input id="ghOwner" placeholder="ten-github"></label><label>Tên repo<input id="ghRepo" placeholder="dalat-3n2d"></label><label>Nhánh<input id="ghBranch" placeholder="main"></label><label>Token<input id="ghToken" type="password" placeholder="github_pat_..."></label></div>
+      <button class="btn" id="ghSaveCfg" style="margin-top:8px">Lưu cài đặt</button>
+    </details>
+  </div>
+</main>
+<button class="music" id="music"><span class="eq"><i></i><i></i><i></i></span><span id="musicTxt">Bật nhạc</span></button>
+<div class="tabbar" id="tabbar">
+  <button data-tab="cards" class="on"><span>📅</span>Lịch trình</button>
+  <button data-tab="table"><span>✅</span>Tick</button>
+  <button data-tab="chi-phi"><span>💰</span>Chi phí</button>
+  <button data-tab="quan-an"><span>📍</span>Quán ăn</button>
+  <button data-tab="thanh-vien"><span>👥</span>Nhóm</button>
+  <button data-tab="music" id="tabMusic"><span>🎵</span>Nhạc</button>
+</div>
+<div class="modal" id="modal"><form class="sheet" id="editForm">
+  <h3 id="mTitle">Thêm thẻ</h3>
+  <div class="form2">
+    <label>Ngày<select id="fDay"></select></label>
+    <label>Giờ<input id="fTime" placeholder="vd 15:45 - 17:45" required></label>
+    <label class="full">Địa điểm / hoạt động<input id="fName" required></label>
+    <label>Giá thấp / người<input id="fLo" inputmode="numeric" placeholder="vd 60000 (0 = miễn phí)"></label>
+    <label>Giá cao / người<input id="fHi" inputmode="numeric" placeholder="để trống = bằng giá thấp"></label>
+    <label class="full">Địa chỉ (có địa chỉ sẽ có bản đồ)<input id="fAddr" placeholder="số nhà, đường, phường"></label>
+    <label class="full">Ghi chú<textarea id="fNote" rows="2"></textarea></label>
+    <label class="full">Ảnh (đường dẫn images/... hoặc link https)<input id="fImg" list="imgList"><datalist id="imgList"></datalist></label>
+    <label class="full">…hoặc chọn ảnh từ máy (tự thu nhỏ, lưu thẳng vào txt)<input id="fFile" type="file" accept="image/*"></label>
+    <label class="full chk2"><input type="checkbox" id="fDone"> Đã hoàn thành</label>
+  </div>
+  <div class="links" style="justify-content:flex-end"><button type="button" class="btn" id="mCancel">Huỷ</button><button class="btn" style="background:var(--ink);color:#fff">Lưu thẻ</button></div>
+</form></div>
+<div class="modal" id="rawModal"><div class="sheet"><h3 id="rawTitle">Sửa toàn bộ data.txt</h3><textarea id="rawText" rows="18" style="width:100%;font:12px/1.5 ui-monospace,Menlo,monospace"></textarea>
+  <div class="links" style="justify-content:flex-end"><button class="btn" id="rawCancel">Huỷ</button><button class="btn" id="rawOk" style="background:var(--ink);color:#fff">Áp dụng</button></div></div></div>
+<div class="modal" id="pModal"><form class="sheet" id="pForm">
+  <h3 id="pTitle">Người tham gia</h3>
+  <div class="form2">
+    <label>Tên<input id="pName" required></label>
+    <label>Vai trò<input id="pRole" placeholder="vd Trưởng đoàn, Thủ quỹ, Tài xế"></label>
+    <label class="full">Số điện thoại 🔒<input id="pPhone" type="tel" inputmode="tel" placeholder="mã hoá trước khi lưu"></label>
+    <label class="full">Địa chỉ nhà 🔒<textarea id="pAddr" rows="2" placeholder="mã hoá trước khi lưu"></textarea></label>
+    <label class="full" id="pPassWrap">Mật khẩu nhóm (để mã hoá SĐT + địa chỉ)<input id="pPass" type="password" placeholder="cả nhóm dùng chung 1 mật khẩu"></label>
+  </div>
+  <div class="links" style="justify-content:space-between"><button type="button" class="btn" id="pDel" style="color:#b03a5b">🗑️ Xoá</button><span><button type="button" class="btn" id="pCancel">Huỷ</button> <button class="btn" style="background:var(--ink);color:#fff">Lưu</button></span></div>
+</form></div>
+<div class="toast" id="toast"></div>
+<footer>Đà Lạt luôn là một ý hay! ♡</footer>
+
+<script type="text/plain" id="fallback"># =====================================================================
+#  FILE DỮ LIỆU CHUYẾN ĐI – sửa file này, lưu lại là web tự cập nhật
+# =====================================================================
+#  - Dòng bắt đầu bằng # là ghi chú, web bỏ qua.
+#  - Các cột ngăn cách bằng dấu  |
+#  - Giá ghi số liền, KHÔNG dấu chấm (vd 200000). Miễn phí ghi 0.
+#    Chưa biết giá thì để trống. Giá cố định thì ghi 2 cột giống nhau.
+#  - Ảnh: đường dẫn trong thư mục images/ hoặc link ảnh https://...
+#  - Địa chỉ có thì web tự tạo nút Google Map + nút tìm ảnh Google.
+# =====================================================================
+
+[CHUYẾN ĐI]
+Tên = Đà Lạt 3 ngày 2 đêm
+Ngày = 03/12 (Thứ 5) – 06/12/2026 (CN)
+Slogan = Đi để thấy · Ăn để nhớ · Chụp để lưu
+Ảnh bìa = images/cover.jpg
+Excel = DaLat_3N2D_timeline.xlsx
+Poster = poster.png
+# Nhạc nền: để trống = nhạc lofi tự phát sinh trong web (không cần file).
+# Muốn nhạc riêng: bỏ file mp3 vào thư mục music/ rồi ghi, vd: Nhạc = music/bai-hat.mp3
+# Hoặc dán link YouTube/Spotify playlist: Nhạc = https://open.spotify.com/playlist/...
+Nhạc = music/music.mp3
+
+[THÀNH VIÊN]
+# Tên | Vai trò. Tổng chi phí nhóm = chi phí/người × số người.
+# SĐT + địa chỉ nhà nhập trên web, được mã hoá vào mục [BẢO MẬT].
+Kiệt | Lên kế hoạch
+Thảo Zân |
+Bạn 3 |
+Bạn 4 |
+
+# ---------------------------------------------------------------------
+# [NGÀY] Tên ngày | Chủ đề
+# Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh
+# ---------------------------------------------------------------------
+
+[NGÀY] Thứ 5 · 03/12 | Lên đường
+20:00 | Xe Phương Trang TP.HCM → Đà Lạt | 1100000 | 1100000 | Gồm vé xe khứ hồi + homestay 2 đêm. Tới Đà Lạt ~04:00 sáng | | images/bus2.jpg
+
+[NGÀY] Ngày 1 · Thứ Sáu 04/12 | Săn mây · Quán 2 Ơi · Tàu · Đồ nướng · Chợ đêm
+04:30 - 10:00 | Tour săn mây (5 điểm) | 200000 | 200000 | Đã gồm ăn sáng/cà phê tùy tour | | images/sanmay.jpg
+10:00 - 11:30 | Quán 2 Ơi (ăn trưa) | 55000 | 100000 | Đặt bàn trước 2 ngày! Combo ~55k | 14bis Mai Hoa Thôn, P.2 (nay P. Xuân Hương) | images/lunch.jpg
+11:30 - 14:00 | Đi bộ + cà phê gần 2 Ơi | 30000 | 60000 | Tùy duyên tắp vô quán gần đó | | images/cafe.jpg
+14:00 - 16:15 | Check-in homestay, tắm rửa | | | Book taxi ra ga trước 16:15 | | images/house.jpg
+16:30 - 17:45 | Ga Đà Lạt → Trại Mát (tàu DL10) | 80000 | 100000 | 16:30 xuất phát (40p di chuyển + mua vé), tàu chạy 17:10 | Ga Đà Lạt, 1 Quang Trung, P.10 (nay P. Xuân Hương) | images/train.jpg
+17:45 - 19:15 | Tiệm nướng Xóm Lèo / Chạng Vạng | 200000 | 300000 | Taxi từ Trại Mát. Đặt bàn trước, mở từ 16:00 | 113 Huỳnh Tấn Phát, P.11 (nay P. Xuân Trường) | images/bbq.jpg
+19:30 - 21:00 | Chợ đêm Đà Lạt | 50000 | 100000 | Bánh tráng nướng, khoai lang nướng, sữa đậu nành | Nguyễn Thị Minh Khai, P.1 (nay P. Xuân Hương) | images/market.jpg
+22:00 | Nghỉ đêm 1: Homestay | | | Gần Cam Ly / trung tâm | | images/room1.jpg
+
+[NGÀY] Ngày 2 · Thứ Bảy 05/12 | Ngắm sương · Puppy Farm · Đồi cỏ hồng · Lẩu gà
+06:00 - 06:40 | Đồi Ngô Quyền (ngắm sương) | 0 | 0 | | Cuối đường Ngô Quyền, P.6 (nay P. Cam Ly) | images/ngoquyen.jpg
+06:45 - 07:30 | Bánh mì xíu mại Bé Linh | 20000 | 35000 | | Góc Hoàng Diệu & Trần Nhật Duật, P.5 (nay P. Cam Ly) | images/banhmi.jpg
+08:00 - 11:15 | Puppy Farm | 100000 | 100000 | Mở 7:30 - 17:30 | Đường Cam Ly, thôn Măng Lin, P.7 (nay P. Lang Biang) | images/puppy.jpg
+11:45 - 12:00 | Bánh căn Bé Hoa | 30000 | 50000 | | 36 Trần Nhật Duật, P.5 (nay P. Cam Ly) | images/banhcan.jpg
+12:00 - 15:30 | Ngủ trưa ở homestay | | | Sạc pin cho buổi chiều | | images/bed.jpg
+15:45 - 17:45 | Đồi cỏ hồng – Hồ Tuyền Lâm | 60000 | 60000 | 15:45 đi → 16:15 tới → 17:00 chụp hoàng hôn. Vé ~60k (có nơi ghi miễn phí) | Gò Đá Hoa Vàng, Hồ Tuyền Lâm, P.3 (nay P. Xuân Hương) | images/sanmay.jpg
+18:00 - 19:30 | Lẩu gà lá é Tao Ngộ | 150000 | 250000 | | 70A 3 Tháng 2, P.1 (nay P. Xuân Hương) | images/lau.jpg
+19:30 - 21:30 | Hồ Xuân Hương + Tháp VinaPhone | 0 | 0 | Dạo hồ, mua quà (nếu còn sức) | Trần Quốc Toản, P.1 (nay P. Xuân Hương) | images/hxh.jpg
+22:00 | Nghỉ đêm 2: Homestay | | | Ngủ sớm 22:00 - 23:00 | | images/room1.jpg
+
+[NGÀY] Ngày 3 · Chủ Nhật 06/12 | Ăn local · Iyashi · Về Sài Gòn
+06:30 - 07:30 | Ăn sáng món local | 40000 | 70000 | Phở / bánh ướt lòng gà / bánh căn... xem list quán | | images/banhuot.jpg
+07:40 - 09:00 | Iyashi / Quê Garden | 80000 | 120000 | Thảo Zân đi nhà thờ | 868 Cam Ly, P.5 (nay P. Cam Ly) | images/iyashi.jpg
+09:00 - 11:30 | Kem Phụng + đặc sản, trả phòng | 50000 | 100000 | Gửi hành lý nếu cần | 97A Nguyễn Văn Trỗi, P.2 (nay P. Xuân Hương) | images/room3.jpg
+11:30 - 12:30 | Ăn nhẹ, ra bến xe | 50000 | 100000 | Đi taxi | | images/bus1.jpg
+14:00 | Xe Phương Trang về TP.HCM | | | Đã gồm trong vé khứ hồi | Bến xe liên tỉnh, 01 Tô Hiến Thành, P.3 (nay P. Xuân Hương) | images/bus2.jpg
+
+[CHI PHÍ CHUNG]
+# Tên khoản | Giá thấp/người | Giá cao/người | Ghi chú
+Taxi cả chuyến | 250000 | 400000 | Chia 4 người
+Quà, chi phí phát sinh | 150000 | 250000 |
+
+[QUÁN ĂN]
+# Tên quán | Địa chỉ | Ghi chú
+Quán 2 Ơi | 14bis Mai Hoa Thôn, P.2 | Cơm trưa, đặt trước
+Bánh căn Bé Hoa | 36 Trần Nhật Duật, P.5 |
+Quán phở King | 14 Trần Bình Trọng, P.5 |
+Bún bò Bà Ba | 234 Hai Bà Trưng, P.6 |
+Bánh mì xíu mại Bé Linh | Góc Hoàng Diệu & Trần Nhật Duật, P.5 |
+Bún cá tầm A Huy | 21 Yersin, P.10 |
+Bánh cuốn tôm thịt Chị Em | 1/8 Thông Thiên Học, P.2 |
+Bún mắm miền Tây | 37 Trần Nhật Duật, P.5 |
+Phở atiso Atispho | Lô H19 Phạm Hồng Thái, P.10 |
+Bánh ướt lòng gà | Đường Tăng Bạt Hổ, P.1 |
+Lẩu gà lá é Tao Ngộ | 70A 3 Tháng 2, P.1 |
+Tiệm nướng Xóm Lèo | 113 Huỳnh Tấn Phát, P.11 |
+Chạng Vạng Coffee & BBQ | 119 Huỳnh Tấn Phát, P.11 |
+Kem Phụng | 97A Nguyễn Văn Trỗi, P.2 |
+Yaourt phô mai | 48 Khe Sanh, P.10 |
+Lẩu cá tầm | | Chọn quán sau
+
+[LƯU Ý ĐỊA ĐIỂM]
+# Hiện trong ô "Lưu ý khi vô tiệm" dưới bản đồ. Chỉ ghi điều có nguồn – dán link nguồn ở cột 3.
+# Tên địa điểm (gõ 1 phần tên là được) | Lưu ý | Link nguồn
+Bánh mì xíu mại Bé Linh | Chỉ bán buổi sáng (~6:00 - 10:00). Ngày đông có thể hết từ ~9h, nên đến sớm | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Bánh mì xíu mại Bé Linh | Có 2 chi nhánh 26 và 37 Hoàng Diệu. Số 37 rộng, có bãi đậu xe, hợp đi nhóm; số 26 nhỏ, ngồi ngoài trời | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Bánh mì xíu mại Bé Linh | Không ăn cay thì dặn trước bớt sa tế. Giá bài viết ghi: 15.000đ/phần | https://mia.vn/cam-nang-du-lich/top-quan-banh-mi-xiu-mai-hoang-dieu-19607
+Lẩu gà lá é Tao Ngộ | Bài tổng hợp chi nhánh KHÔNG có địa chỉ 70A 3 Tháng 2 → gọi xác nhận trước. Chi nhánh được liệt kê: 60 Phạm Ngũ Lão P.3, 30 Bùi Thị Xuân P.2, 10 đường 3/4 P.3, 89 Hai Bà Trưng P.6, 33 Phù Đổng Thiên Vương P.8, 28b Hải Thượng P.6, 64 Phan Chu Trinh P.9 | https://mia.vn/cam-nang-du-lich/quan-lau-ga-la-e-tao-ngo-da-lat-16331
+Lẩu gà lá é Tao Ngộ | Chi nhánh 89 Hai Bà Trưng: nồi ~200k cho 2 người. Chi nhánh 28b Hải Thượng đông vào giờ cao điểm | https://mia.vn/cam-nang-du-lich/quan-lau-ga-la-e-tao-ngo-da-lat-16331
+Xóm Lèo | Mở 16:00 - 22:00, nằm trong khu vườn rau Trại Mát, đường Huỳnh Tấn Phát | https://mia.vn/cam-nang-du-lich/tiem-nuong-xom-leo-14084
+Chạng Vạng | 119 Huỳnh Tấn Phát, P.11. Khu BBQ mở 16:00 - 22:00, khu cà phê 7:30 - 22:00 | https://mia.vn/cam-nang-du-lich/kham-pha-chang-vang-coffee-bbq-18716
+Puppy Farm | Mở 7:30 - 17:30 mỗi ngày. Vé người lớn 100k, trẻ 1m2 - 1m4: 50k | https://mia.vn/cam-nang-du-lich/puppy-farm-da-lat-18863
+Đồi cỏ hồng | Nằm trong phim trường Gò Đá Hoa Vàng. Bài viết ghi vé miễn phí; cỏ hồng có từ đầu tháng 11, tàn vào tháng 12 | https://vinwonders.com/vi/wonderpedia/news/doi-co-hong-da-lat/
+Quán 2 Ơi | Review trên trang tổng hợp nhắc combo cơm ~55k | https://local.haogiayensao.com/lamdong/?food=quan+2oi%21+-+da+lat+lunch
+Quê Garden | Địa chỉ 868 Cam Ly, phường Cam Ly - Đà Lạt | https://mia.vn/cam-nang-du-lich/que-garden-da-lat-tieu-vuong-quoc-nhat-ban-mong-mo-tren-deo-mimosa-1422
+
+[MẠNG XÃ HỘI]
+# Trang chính thức đã tìm thấy. Tên địa điểm | Mạng | Link
+Quán 2 Ơi | Instagram @quan2oi | https://www.instagram.com/quan2oi/
+Quán 2 Ơi | Facebook | https://www.facebook.com/bialanhcomtruua2oi/
+
+[LƯU Ý]
+🚕 Taxi: gom điểm cùng tuyến, ~70k - 150k/chuyến
+🛵 Xe máy: 2 xe/4 người, ~120k - 180k/ngày
+🧥 Mang theo: áo khoác, giày thể thao, áo mưa mỏng, sạc dự phòng
+📞 Đặt bàn: Quán 2 Ơi (trước 2 ngày), Xóm Lèo / Chạng Vạng
+🌤️ Kiểm tra: thời tiết, lịch tàu DL10, cỏ hồng còn nở không
+🗺️ Phường cũ → mới: P.1, 2, 3, 10 → Xuân Hương · P.5, 6 → Cam Ly · P.7 → Lang Biang · P.11 → Xuân Trường
+⏰ Ngày 3 (06/12): 7:00 sáng nhớ dậy sớm nha bà!
+</script>
+<script>
+const $ = s => document.querySelector(s);
+// Trang xem thử trên Claude chặn iframe/popup của web khác -> dùng link thường
+const IN_CLAUDE = /claude|anthropic/i.test(location.hostname);
+const CAN_EMBED = !IN_CLAUDE;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money = n => n.toLocaleString("vi-VN").replace(/,/g, ".") + "đ";
+const COLORS = ["var(--purple)","var(--pink)","var(--green)","var(--blue)","var(--gold)"];
+const num = v => { v = (v || "").replace(/[^\d]/g, ""); return v === "" ? null : +v; };
+const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} } };
+
+function parse(txt) {
+  const d = { trip:{}, members:[], days:[], extra:[], shops:[], tips:[], notes:[], social:[], secret:"" };
+  let sec = null, day = null;
+  for (let raw of txt.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith("#")) continue;
+    const m = line.match(/^\[(.+?)\]\s*(.*)$/);
+    if (m) {
+      sec = m[1].toUpperCase();
+      if (sec === "NGÀY") { const [name, theme] = m[2].split("|").map(s => s.trim()); day = { name, theme, items: [] }; d.days.push(day); }
+      continue;
+    }
+    const c = line.split("|").map(s => s.trim());
+    if (sec === "CHUYẾN ĐI") { const i = line.indexOf("="); if (i > 0) d.trip[line.slice(0,i).trim()] = line.slice(i+1).trim(); }
+    else if (sec === "THÀNH VIÊN") d.members.push({ name:c[0], role:c[1] || "", phone:"", addr:"" });
+    else if (sec === "BẢO MẬT") { const i = line.indexOf("="); if (i > 0) d.secret = line.slice(i+1).trim(); }
+    else if (sec === "NGÀY" && day) day.items.push({ time:c[0], name:c[1], lo:num(c[2]), hi:num(c[3]) ?? num(c[2]), note:c[4] || "", addr:c[5] || "", img:c[6] || "", done:/^(x|1|xong|✓|☑|done)$/i.test(c[7] || "") });
+    else if (sec === "CHI PHÍ CHUNG") d.extra.push({ name:c[0], lo:num(c[1]), hi:num(c[2]) ?? num(c[1]), note:c[3] });
+    else if (sec === "QUÁN ĂN") d.shops.push({ name:c[0], addr:c[1], note:c[2] });
+    else if (sec === "LƯU Ý ĐỊA ĐIỂM") d.notes.push({ key:c[0], text:c[1], src:c[2] });
+    else if (sec === "MẠNG XÃ HỘI") d.social.push({ key:c[0], label:c[1], url:c[2] });
+    else if (sec === "LƯU Ý") d.tips.push(line);
+  }
+  return d;
+}
+const cleanAddr = a => (a || "").replace(/\(nay[^)]*\)/i, "").trim();
+const mapUrl = (name, addr) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${name.split(" (")[0].split(" / ")[0]}, ${cleanAddr(addr)}, Đà Lạt`);
+const imgUrl = name => "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(name.split(" (")[0] + " Đà Lạt");
+const low = x => (x || "").toLowerCase();
+const matches = (key, name) => { const k = low(key), n = low(name); return n.includes(k) || k.includes(n.split(" (")[0].split(" / ")[0]); };
+const q = (name, addr) => `${name.split(" (")[0].split(" / ")[0]}, ${cleanAddr(addr)}, Đà Lạt`;
+const embedUrl = (name, addr) => "https://maps.google.com/maps?hl=vi&z=16&output=embed&q=" + encodeURIComponent(q(name, addr));
+const dirUrl = (name, addr) => "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(q(name, addr));
+function placePanel(D, name, addr, id) {
+  const base = name.split(" (")[0].split(" / ")[0];
+  const kw = encodeURIComponent(base + " Đà Lạt");
+  const notes = D.notes.filter(n => matches(n.key, name));
+  const soc = D.social.filter(n => matches(n.key, name));
+  return `<div class="mapbox" id="${id}" data-src="${embedUrl(name, addr)}">
+    <div class="frame"></div>
+    <div class="maplinks"><a class="mini" target="_blank" href="${mapUrl(name, addr)}">⭐ Xem đánh giá trên Google Maps</a><a class="mini" target="_blank" href="${dirUrl(name, addr)}">🧭 Chỉ đường</a><a class="mini img" target="_blank" href="${imgUrl(name)}">🖼️ Ảnh Google</a></div>
+    <details class="tips2"><summary>⚠️ Lưu ý khi vô tiệm (${notes.length} ghi chú có nguồn)</summary>
+      ${notes.length ? `<ul>${notes.map(n => `<li>${esc(n.text)}${n.src ? ` <a class="src" target="_blank" href="${esc(n.src)}">[nguồn]</a>` : ""}</li>`).join("")}</ul>` : `<div class="note">Chưa có lưu ý đã kiểm chứng. Xem review thật qua các link bên dưới, rồi thêm vào mục [LƯU Ý ĐỊA ĐIỂM] trong data.txt.</div>`}
+      ${soc.length ? `<div class="note" style="margin-top:6px">Trang chính thức:</div><div class="soc">${soc.map(x => `<a target="_blank" href="${esc(x.url)}">${esc(x.label)}</a>`).join("")}</div>` : ""}
+      <div class="note" style="margin-top:6px">Tìm review trên mạng xã hội:</div>
+      <div class="soc"><a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent('site:facebook.com "' + base + '" Đà Lạt')}">Facebook</a><a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent('site:instagram.com "' + base + '" Đà Lạt')}">Instagram</a><a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent('site:threads.net OR site:threads.com "' + base + '" Đà Lạt')}">Threads</a><a target="_blank" href="https://www.tiktok.com/search?q=${kw}">TikTok</a></div>
+    </details></div>`;
+}
+const priceText = (lo, hi) => lo == null ? "" : (lo === 0 && !hi) ? "Miễn phí" : lo === hi ? money(lo) + "/người" : `${money(lo)} - ${money(hi)}/người`;
+
+var render = function (d) {
+  if (d !== DATA && typeof unlocked !== "undefined") unlocked = false;
+  DATA = d;
+  const t = d.trip;
+  document.title = t["Tên"] || document.title;
+  $("#title").textContent = t["Tên"] || "";
+  $("#dates").textContent = t["Ngày"] || "";
+  $("#slogan").textContent = t["Slogan"] || "";
+  if (t["Ảnh bìa"]) $("#heroBg").style.backgroundImage = `url("${t["Ảnh bìa"]}")`;
+  $("#topLinks").innerHTML =
+    (t["Excel"] ? `<a class="btn" href="${esc(t["Excel"])}">📊 File Excel timeline</a>` : "") +
+    (t["Poster"] ? `<a class="btn" href="${esc(t["Poster"])}" target="_blank">🖼️ Xem poster</a>` : "") +
+    `<a class="btn ghost" href="#chi-phi">💰 Chi phí</a><a class="btn ghost" href="#quan-an">📍 Quán ăn</a>`;
+
+  $("#nav").innerHTML = `<a href="#" class="editchip" data-toggle-edit>${document.body.classList.contains("editing") ? "✅ Xong" : "✏️ Sửa"}</a>` + d.days.map((x,i) => `<a href="#ngay-${i}" data-day="${i}">${esc(x.name.split("·")[0])}<small>${esc((x.name.split("·")[1] || "").trim().replace(/^[^\d]*/, ""))}</small></a>`).join("") +
+    `<a href="#chi-phi">Chi phí</a><a href="#quan-an">Quán ăn</a><a href="#thanh-vien">Người tham gia</a><a href="#luu-y">Lưu ý</a>`;
+
+  let lo = 0, hi = 0, all = 0; const tableRows = [];
+  const rows = [];
+  $("#days").innerHTML = d.days.map((day, i) => {
+    const col = COLORS[i % COLORS.length];
+    const items = day.items.map((it, j) => {
+      all++;
+      if (it.lo) { lo += it.lo; hi += it.hi || it.lo; rows.push([it.name, it.lo, it.hi || it.lo, day.name.split("·")[0]]); }
+      const key = i + ":" + j, done = !!it.done;
+      const pr = priceText(it.lo, it.hi);
+      const pid = "m" + i + "-" + j;
+      tableRows.push({ key, done, day: day.name.split("·")[0], time: it.time, name: it.name, pr, addr: it.addr });
+      return `<div class="it${done ? " done" : ""}">
+        <label class="tick" title="Đánh dấu hoàn thành"><input type="checkbox" data-key="${esc(key)}" ${done ? "checked" : ""}>Xong</label>
+        ${it.img ? `<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy" onerror="this.style.visibility='hidden'">` : ""}
+        <div class="tx"><div class="tm" style="color:${col}">${esc(it.time)}</div>
+        <div class="tt">${esc(it.name)}</div>
+        ${pr ? `<span class="pill">${pr}</span>` : ""}
+        ${it.addr ? `<div class="addr">📍 ${esc(it.addr)}</div>` : ""}
+        ${it.note ? `<div class="note">${esc(it.note)}</div>` : ""}
+        <div class="acts">
+          ${it.addr ? `<button class="mini" style="border:0;cursor:pointer;font-family:inherit" data-map="${pid}">🗺️ Bản đồ + lưu ý ▾</button>` : ""}
+          <span class="edits"><button class="ico" data-edit="${key}" title="Sửa">✏️</button><button class="ico" data-del="${key}" title="Xoá">🗑️</button></span>
+        </div></div>${it.addr ? placePanel(d, it.name, it.addr, pid) : ""}</div>`;
+    }).join("");
+    return `<section class="day" data-i="${i}"><h2 id="ngay-${i}"><span class="tag" style="background:${col}">${esc(day.name.split("·")[0])}</span>${esc((day.name.split("·")[1] || "").trim())}</h2>
+      <div class="theme">${esc(day.theme || "")}</div><div class="grid">${items}<button class="addcard" data-add="${i}">＋ Thêm thẻ vào ${esc(day.name.split("·")[0])}</button></div></section>`;
+  }).join("");
+
+  d.extra.forEach(x => { if (x.lo) { lo += x.lo; hi += x.hi || x.lo; rows.push([x.name + (x.note ? ` (${x.note})` : ""), x.lo, x.hi || x.lo, "Chung"]); } });
+  const n = Math.max(d.members.length, 1);
+  $("#costTable").innerHTML = `<tr><th>Khoản</th><th>Ngày</th><th class="n">1 người</th><th class="n">${n} người</th></tr>` +
+    rows.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[3])}</td><td class="n">${r[1]===r[2] ? money(r[1]) : money(r[1]) + " - " + money(r[2])}</td><td class="n">${r[1]===r[2] ? money(r[1]*n) : money(r[1]*n) + " - " + money(r[2]*n)}</td></tr>`).join("");
+  $("#totals").innerHTML = `<div><small>Mỗi người</small>${money(lo)} - ${money(hi)}</div><div><small>Cả nhóm ${n} người</small>${money(lo*n)} - ${money(hi*n)}</div>`;
+  $("#members").innerHTML = d.members.map(m => `<span>🙋 ${esc(m.name)}: ${money(lo)} - ${money(hi)}</span>`).join("");
+  renderPeople();
+
+  $("#shops").innerHTML = d.shops.map((s, k) => `<div class="shop" style="flex-wrap:wrap"><b>${esc(s.name)}</b>
+    <div class="note">${esc(s.addr || "")}${s.note ? " · " + esc(s.note) : ""}</div>
+    <div class="acts">${s.addr ? `<button class="mini" style="border:0;cursor:pointer;font-family:inherit" data-map="s${k}">🗺️ Bản đồ + lưu ý ▾</button>` : `<a class="mini img" target="_blank" href="${imgUrl(s.name)}">🖼️ Ảnh</a>`}</div>
+    ${s.addr ? placePanel(d, s.name, s.addr, "s" + k) : ""}</div>`).join("");
+  $("#tips").innerHTML = d.tips.map(x => `<li>${esc(x)}</li>`).join("");
+
+  $("#table").innerHTML = `<table class="tl"><tr><th>✓</th><th>Ngày</th><th>Giờ</th><th>Địa điểm</th><th>Chi phí</th><th>Địa chỉ</th></tr>` +
+    tableRows.map((r, k) => (k === 0 || tableRows[k-1].day !== r.day ? `<tr class="grp"><td colspan="6">${esc(r.day)}</td></tr>` : "") + `<tr class="${r.done ? "done" : ""}"><td><input type="checkbox" data-key="${esc(r.key)}" ${r.done ? "checked" : ""}></td><td>${esc(r.day)}</td><td>${esc(r.time)}</td><td><b>${esc(r.name)}</b></td><td>${r.pr || "—"}</td><td>${r.addr ? `<a target="_blank" href="${mapUrl(r.name, r.addr)}">${esc(cleanAddr(r.addr))}</a>` : "—"}</td></tr>`).join("") + "</table>";
+  document.querySelectorAll("[data-map]").forEach(b => b.onclick = () => {
+    const box = document.getElementById(b.dataset.map); const open = box.classList.toggle("open");
+    if (open && !box.querySelector(".frame").innerHTML) box.querySelector(".frame").innerHTML = CAN_EMBED
+      ? `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="${box.dataset.src}"></iframe>`
+      : `<a class="btn" style="width:100%;justify-content:center;background:#eef3fa;color:#285f99" href="${box.querySelector('.maplinks a').href}">🗺️ Mở bản đồ trong Google Maps</a>`;
+    b.textContent = open ? "🗺️ Ẩn bản đồ ▴" : "🗺️ Bản đồ + lưu ý ▾";
+  });
+  if (IN_CLAUDE) document.querySelectorAll('a[target="_blank"]').forEach(a => a.removeAttribute("target"));
+  document.querySelectorAll('a[target="_blank"]').forEach(a => a.rel = "noopener");
+  if (t["Excel"]) fetch(t["Excel"], { method: "HEAD" }).then(r => { if (!r.ok) throw 0; }).catch(() => {
+    document.querySelectorAll(`a[href="${t["Excel"]}"]`).forEach(a => { a.removeAttribute("href"); a.textContent = "📊 Excel: có trên bản GitHub"; a.style.opacity = .6; });
+  });
+  const upd = () => {
+    const boxes = [...document.querySelectorAll(".tick input")], c = boxes.filter(b => b.checked).length;
+    $("#bar").style.width = (boxes.length ? c / boxes.length * 100 : 0) + "%";
+    $("#progressText").textContent = `Tiến độ: ${c}/${boxes.length} hoạt động đã xong (lưu trong data.txt)`;
+  };
+  document.querySelectorAll("input[data-key]").forEach(b => b.onchange = () => {
+    const [di, ii] = b.dataset.key.split(":").map(Number); DATA.days[di].items[ii].done = b.checked;
+    document.querySelectorAll("input[data-key]").forEach(o => { if (o.dataset.key === b.dataset.key) { o.checked = b.checked; const row = o.closest(".it, tr"); if (row) row.classList.toggle("done", b.checked); } });
+    upd(); saveDraft();
+  });
+  document.querySelectorAll("[data-add]").forEach(b => b.onclick = () => openEditor(+b.dataset.add, -1));
+  document.querySelectorAll("[data-edit]").forEach(b => b.onclick = () => { const [di, ii] = b.dataset.edit.split(":").map(Number); openEditor(di, ii); });
+  document.querySelectorAll("[data-del]").forEach(b => b.onclick = () => {
+    if (!b.classList.contains("sure")) { b.classList.add("sure"); b.textContent = "Xoá?"; setTimeout(() => { b.classList.remove("sure"); b.textContent = "🗑️"; }, 3000); return; }
+    const [di, ii] = b.dataset.del.split(":").map(Number); DATA.days[di].items.splice(ii, 1); commit("Đã xoá thẻ");
+  });
+  upd();
+}
+
+let DATA = null, SRC = "";
+async function load() {
+  try {
+    const r = await fetch("data.txt", { cache: "no-store" });
+    if (!r.ok) throw 0;
+    SRC = await r.text();
+  } catch (e) { SRC = $("#fallback").textContent; }
+  const draft = store.get("dl-draft"), synced = store.get("dl-synced");
+  if (draft && serialize(parse(SRC)) === draft) { localStorage.removeItem("dl-draft"); }
+  if (draft && serialize(parse(SRC)) !== draft) { render(parse(draft)); banner(); }
+  else { render(parse(SRC)); banner(); }
+}
+// ===== Mini database: serialize, nháp, editor, GitHub =====
+const clean = v => String(v ?? "").replace(/\|/g, "/").replace(/[\r\n]+/g, " ").trim();
+const row = a => { while (a.length && a[a.length - 1] === "") a.pop(); return a.join(" | "); };
+function serialize(d) {
+  const L = ["# =====================================================================",
+    "#  FILE DỮ LIỆU CHUYẾN ĐI (mini database) – sửa ở đây hoặc ngay trên web",
+    "# =====================================================================",
+    "#  Cột ngăn cách bằng |  ·  Giá ghi số liền (200000), miễn phí = 0, chưa biết = để trống",
+    "#  Cột Xong: ghi x nếu đã hoàn thành  ·  Dòng bắt đầu bằng # là ghi chú", "", "[CHUYẾN ĐI]"];
+  for (const [k, v] of Object.entries(d.trip)) L.push(`${k} = ${v}`);
+  L.push("", "[THÀNH VIÊN]", "# Tên | Vai trò   (SĐT + địa chỉ nhà được mã hoá ở mục [BẢO MẬT], nhập trên web)", ...d.members.map(m => row([clean(m.name), clean(m.role)])));
+  if (d.secret) L.push("", "[BẢO MẬT]", "# Dữ liệu mã hoá AES-GCM bằng mật khẩu nhóm – đừng sửa tay", "data = " + d.secret);
+  L.push("", "# [NGÀY] Tên ngày | Chủ đề", "# Giờ | Địa điểm | Giá thấp/người | Giá cao/người | Ghi chú | Địa chỉ | Ảnh | Xong");
+  for (const day of d.days) {
+    L.push("", `[NGÀY] ${row([clean(day.name), clean(day.theme)])}`);
+    for (const it of day.items) L.push(row([clean(it.time), clean(it.name), it.lo ?? "", it.hi ?? "", clean(it.note), clean(it.addr), clean(it.img), it.done ? "x" : ""].map(String)));
+  }
+  L.push("", "[CHI PHÍ CHUNG]", "# Tên khoản | Giá thấp/người | Giá cao/người | Ghi chú", ...d.extra.map(x => row([clean(x.name), String(x.lo ?? ""), String(x.hi ?? ""), clean(x.note)])));
+  L.push("", "[QUÁN ĂN]", "# Tên quán | Địa chỉ | Ghi chú", ...d.shops.map(x => row([clean(x.name), clean(x.addr), clean(x.note)])));
+  L.push("", "[LƯU Ý ĐỊA ĐIỂM]", "# Tên địa điểm | Lưu ý | Link nguồn", ...d.notes.map(x => row([clean(x.key), clean(x.text), clean(x.src)])));
+  L.push("", "[MẠNG XÃ HỘI]", "# Tên địa điểm | Mạng | Link", ...d.social.map(x => row([clean(x.key), clean(x.label), clean(x.url)])));
+  L.push("", "[LƯU Ý]", ...d.tips.map(clean), "");
+  return L.join("\n");
+}
+function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), 2600); }
+function banner() {
+  const draft = store.get("dl-draft"), synced = store.get("dl-synced");
+  if (!draft) { $("#msg").innerHTML = ""; return; }
+  $("#msg").innerHTML = draft === synced
+    ? `<div class="draft ok">✅ Đã lưu lên GitHub. Web công khai sẽ cập nhật sau khoảng 1 phút.</div>`
+    : `<div class="draft">📝 Có thay đổi chưa lưu vào data.txt trên GitHub (vẫn giữ khi refresh).<button class="btn" onclick="saveGitHub()">💾 Lưu lên GitHub</button><button class="btn" onclick="downloadTxt()">⬇️ Tải data.txt</button></div>`;
+}
+function saveDraft() { store.set("dl-draft", serialize(DATA)); banner(); }
+const startMin = t => { const m = (t || "").match(/(\d{1,2})[:h](\d{2})?/); return m ? +m[1] * 60 + +(m[2] || 0) : 9999; };
+function commit(msg) {
+  DATA.days.forEach(d => d.items.sort((a, b) => startMin(a.time) - startMin(b.time)));
+  saveDraft(); render(DATA); if (msg) toast(msg);
+}
+let editing = null, pendingImg = "";
+function openEditor(di, ii) {
+  editing = { di, ii }; pendingImg = "";
+  const it = ii >= 0 ? DATA.days[di].items[ii] : { time:"", name:"", lo:null, hi:null, note:"", addr:"", img:"", done:false };
+  $("#mTitle").textContent = ii >= 0 ? "Sửa thẻ" : "Thêm thẻ mới";
+  $("#fDay").innerHTML = DATA.days.map((d, k) => `<option value="${k}" ${k === di ? "selected" : ""}>${esc(d.name)}</option>`).join("");
+  $("#fTime").value = it.time; $("#fName").value = it.name; $("#fLo").value = it.lo ?? ""; $("#fHi").value = it.hi != null && it.hi !== it.lo ? it.hi : "";
+  $("#fNote").value = it.note; $("#fAddr").value = it.addr; $("#fImg").value = it.img.startsWith("data:") ? "(ảnh đã tải lên)" : it.img; $("#fDone").checked = it.done; $("#fFile").value = "";
+  $("#imgList").innerHTML = [...new Set(DATA.days.flatMap(d => d.items.map(x => x.img)).filter(x => x && !x.startsWith("data:")))].map(x => `<option value="${esc(x)}">`).join("");
+  $("#modal").classList.add("open"); setTimeout(() => $("#fName").focus(), 50);
+}
+$("#mCancel").onclick = () => $("#modal").classList.remove("open");
+$("#modal").onclick = e => { if (e.target.id === "modal") $("#modal").classList.remove("open"); };
+$("#fFile").onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const img = new Image(), url = URL.createObjectURL(f);
+  img.onload = () => { const s = Math.min(1, 360 / Math.max(img.width, img.height)), c = document.createElement("canvas");
+    c.width = img.width * s; c.height = img.height * s; c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    pendingImg = c.toDataURL("image/jpeg", 0.72); $("#fImg").value = "(ảnh đã tải lên)"; URL.revokeObjectURL(url); };
+  img.src = url;
+};
+$("#editForm").onsubmit = e => {
+  e.preventDefault();
+  const { di, ii } = editing, old = ii >= 0 ? DATA.days[di].items[ii] : null;
+  const lo = num($("#fLo").value), hi = num($("#fHi").value) ?? lo;
+  const imgVal = $("#fImg").value.trim();
+  const it = { time: $("#fTime").value.trim(), name: $("#fName").value.trim(), lo, hi, note: $("#fNote").value.trim(), addr: $("#fAddr").value.trim(),
+    img: pendingImg || (imgVal === "(ảnh đã tải lên)" ? (old ? old.img : "") : imgVal), done: $("#fDone").checked };
+  if (old) DATA.days[di].items.splice(ii, 1);
+  const nd = +$("#fDay").value; DATA.days[nd].items.push(it);
+  $("#modal").classList.remove("open"); curDay = nd; commit(old ? "Đã lưu thay đổi" : "Đã thêm thẻ");
+};
+function openRaw(title, text, apply) {
+  $("#rawTitle").textContent = title; $("#rawText").value = text; $("#rawModal").classList.add("open");
+  $("#rawOk").onclick = () => { apply($("#rawText").value); $("#rawModal").classList.remove("open"); };
+}
+$("#rawCancel").onclick = () => $("#rawModal").classList.remove("open");
+$("#btnRaw").onclick = () => openRaw("Sửa toàn bộ data.txt", serialize(DATA), v => { render(parse(v)); saveDraft(); toast("Đã áp dụng"); });
+
+$("#btnReset").onclick = () => {
+  const b = $("#btnReset"); if (!b.dataset.sure) { b.dataset.sure = 1; b.textContent = "Bấm lần nữa để bỏ hết thay đổi"; setTimeout(() => { delete b.dataset.sure; b.textContent = "↩️ Bỏ thay đổi"; }, 3000); return; }
+  localStorage.removeItem("dl-draft"); render(parse(SRC)); banner(); toast("Đã quay về data.txt gốc");
+};
+function downloadTxt() {
+  try { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([serialize(DATA)], { type: "text/plain;charset=utf-8" })); a.download = "data.txt"; document.body.appendChild(a); a.click(); a.remove(); toast("Đã tải data.txt"); }
+  catch (e) { copyTxt(); }
+  if (IN_CLAUDE) copyTxt();
+}
+function copyTxt() { navigator.clipboard.writeText(serialize(DATA)).then(() => toast("Đã copy nội dung data.txt"), () => openRaw("Copy nội dung bên dưới", serialize(DATA), () => {})); }
+$("#btnDl").onclick = downloadTxt; $("#btnCopy").onclick = copyTxt;
+// GitHub
+const ghGuess = () => { const h = location.hostname.match(/^([^.]+)\.github\.io$/); return h ? { owner: h[1], repo: location.pathname.split("/").filter(Boolean)[0] || h[1] + ".github.io" } : {}; };
+function ghCfg() { let c = {}; try { c = JSON.parse(store.get("dl-gh") || "{}"); } catch (e) {} const g = ghGuess(); return { owner: c.owner || g.owner || "", repo: c.repo || g.repo || "", branch: c.branch || "main", token: c.token || "" }; }
+function fillCfg() { const c = ghCfg(); $("#ghOwner").value = c.owner; $("#ghRepo").value = c.repo; $("#ghBranch").value = c.branch; $("#ghToken").value = c.token; }
+$("#ghSaveCfg").onclick = () => { store.set("dl-gh", JSON.stringify({ owner: $("#ghOwner").value.trim(), repo: $("#ghRepo").value.trim(), branch: $("#ghBranch").value.trim() || "main", token: $("#ghToken").value.trim() })); toast("Đã lưu cài đặt GitHub"); };
+const b64 = s => { const u = new TextEncoder().encode(s); let r = ""; for (let i = 0; i < u.length; i += 0x8000) r += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(r); };
+async function saveGitHub() {
+  const c = ghCfg();
+  if (!c.owner || !c.repo || !c.token) { fillCfg(); document.querySelector("#du-lieu + .box details").open = true; $("#du-lieu").scrollIntoView({ behavior: "smooth" }); toast("Điền tài khoản, repo và token GitHub trước nha"); return; }
+  if (IN_CLAUDE) { toast("Bản xem thử trên Claude không gọi được GitHub – dùng Tải/Copy data.txt"); return; }
+  const text = serialize(DATA), api = `https://api.github.com/repos/${c.owner}/${c.repo}/contents/data.txt`;
+  const H = { Authorization: "Bearer " + c.token, Accept: "application/vnd.github+json" };
+  toast("Đang lưu lên GitHub...");
+  try {
+    let sha; const g = await fetch(`${api}?ref=${encodeURIComponent(c.branch)}`, { headers: H, cache: "no-store" });
+    if (g.ok) sha = (await g.json()).sha; else if (g.status !== 404) throw new Error("Đọc file lỗi " + g.status);
+    const p = await fetch(api, { method: "PUT", headers: H, body: JSON.stringify({ message: "Cập nhật data.txt từ web " + new Date().toLocaleString("vi-VN"), content: b64(text), sha, branch: c.branch }) });
+    if (!p.ok) throw new Error("GitHub từ chối (" + p.status + "): kiểm tra token/quyền Contents");
+    store.set("dl-draft", text); store.set("dl-synced", text); SRC = text; banner(); toast("✅ Đã lưu vào data.txt trên GitHub");
+  } catch (e) { toast(e.message || "Không lưu được"); }
+}
+$("#btnSave").onclick = saveGitHub; fillCfg();
+
+// ===== Người tham gia + mã hoá SĐT/địa chỉ =====
+let PASS = null; try { PASS = sessionStorage.getItem("dl-pass"); } catch (e) {}
+let unlocked = false;
+const ub = b => Uint8Array.from(atob(b), c => c.charCodeAt(0));
+const bu = u => { let r = ""; for (let i = 0; i < u.length; i += 0x8000) r += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(r); };
+async function keyFrom(pass, salt) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({ name: "PBKDF2", salt, iterations: 150000, hash: "SHA-256" }, base, { name: "AES-GCM", length: 256 }, false, ["encrypt", "decrypt"]);
+}
+async function encryptJSON(obj, pass) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, await keyFrom(pass, salt), new TextEncoder().encode(JSON.stringify(obj))));
+  return [bu(salt), bu(iv), bu(ct)].join(".");
+}
+async function decryptJSON(s, pass) {
+  const [salt, iv, ct] = s.split(".").map(ub);
+  return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: "AES-GCM", iv }, await keyFrom(pass, salt), ct)));
+}
+async function unlock(pass, quiet) {
+  if (!DATA.secret) { PASS = pass; unlocked = true; try { sessionStorage.setItem("dl-pass", pass); } catch (e) {} renderPeople(); return true; }
+  try {
+    const sec = await decryptJSON(DATA.secret, pass);
+    DATA.members.forEach(m => { const s = sec[m.name] || {}; m.phone = s.phone || ""; m.addr = s.addr || ""; });
+    PASS = pass; unlocked = true; try { sessionStorage.setItem("dl-pass", pass); } catch (e) {}
+    renderPeople(); if (!quiet) toast("🔓 Đã mở khoá"); return true;
+  } catch (e) { if (!quiet) toast("Sai mật khẩu nhóm"); return false; }
+}
+async function sealSecrets() {
+  const sec = {}; let any = false;
+  DATA.members.forEach(m => { if (m.phone || m.addr) { sec[m.name] = { phone: m.phone, addr: m.addr }; any = true; } });
+  DATA.secret = any ? await encryptJSON(sec, PASS) : "";
+}
+const AV = ["#e2799a", "#5f9e6e", "#4f8bc9", "#d39b3a", "#8a6bbf", "#3d8b8b"];
+function renderPeople() {
+  if (!DATA || !$("#people")) return;
+  if (DATA.secret && !unlocked && PASS) { unlock(PASS, true); }
+  $("#lockBar").innerHTML = DATA.secret && !unlocked
+    ? `<div class="lockbar">🔒 SĐT &amp; địa chỉ đang khoá. <input id="lockPass" type="password" placeholder="Mật khẩu nhóm"><button class="btn" id="lockGo">Mở khoá</button></div>`
+    : (unlocked && DATA.secret ? `<div class="lockbar">🔓 Đã mở khoá trên máy này <button class="btn" id="lockOut">Khoá lại</button></div>` : "");
+  if ($("#lockGo")) { $("#lockGo").onclick = () => unlock($("#lockPass").value); $("#lockPass").onkeydown = e => { if (e.key === "Enter") unlock(e.target.value); }; }
+  if ($("#lockOut")) $("#lockOut").onclick = () => { unlocked = false; PASS = null; try { sessionStorage.removeItem("dl-pass"); } catch (e) {} DATA.members.forEach(m => { m.phone = ""; m.addr = ""; }); renderPeople(); };
+  const hidden = DATA.secret && !unlocked;
+  $("#people").innerHTML = DATA.members.map((m, k) => `<div class="person">
+    <div class="avatar" style="background:${AV[k % AV.length]}">${esc((m.name || "?").trim().split(/\s+/).pop()[0] || "?")}</div>
+    <div style="flex:1;min-width:0"><b>${esc(m.name)}</b><br>${m.role ? `<span class="role">${esc(m.role)}</span>` : ""}
+      <div class="line">📞 ${hidden ? "•••• (đang khoá)" : m.phone ? `<a href="tel:${esc(m.phone.replace(/[^\d+]/g, ""))}">${esc(m.phone)}</a>` : "<span class='note'>chưa có</span>"}</div>
+      <div class="line">🏠 ${hidden ? "•••• (đang khoá)" : m.addr ? `<a target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.addr)}">${esc(m.addr)}</a>` : "<span class='note'>chưa có</span>"}</div></div>
+    <button class="ico" data-person="${k}" title="Sửa">✏️</button></div>`).join("");
+  document.querySelectorAll("[data-person]").forEach(b => b.onclick = () => openPerson(+b.dataset.person));
+}
+let pEdit = -1;
+function openPerson(k) {
+  if (DATA.secret && !unlocked) { toast("Mở khoá bằng mật khẩu nhóm trước nha"); $("#lockPass") && $("#lockPass").focus(); return; }
+  pEdit = k; const m = k >= 0 ? DATA.members[k] : { name: "", role: "", phone: "", addr: "" };
+  $("#pTitle").textContent = k >= 0 ? "Sửa thông tin" : "Thêm người tham gia";
+  $("#pName").value = m.name; $("#pRole").value = m.role; $("#pPhone").value = m.phone; $("#pAddr").value = m.addr; $("#pPass").value = "";
+  $("#pPassWrap").style.display = PASS ? "none" : ""; $("#pDel").style.display = k >= 0 ? "" : "none";
+  $("#pModal").classList.add("open"); setTimeout(() => $("#pName").focus(), 50);
+}
+$("#addPerson").onclick = () => openPerson(-1);
+$("#pCancel").onclick = () => $("#pModal").classList.remove("open");
+$("#pModal").onclick = e => { if (e.target.id === "pModal") $("#pModal").classList.remove("open"); };
+$("#pDel").onclick = async () => {
+  const b = $("#pDel"); if (!b.dataset.sure) { b.dataset.sure = 1; b.textContent = "Bấm lần nữa để xoá"; setTimeout(() => { delete b.dataset.sure; b.textContent = "🗑️ Xoá"; }, 3000); return; }
+  DATA.members.splice(pEdit, 1); if (PASS) await sealSecrets(); $("#pModal").classList.remove("open"); commit("Đã xoá người");
+};
+$("#pForm").onsubmit = async e => {
+  e.preventDefault();
+  const m = { name: $("#pName").value.trim(), role: $("#pRole").value.trim(), phone: $("#pPhone").value.trim(), addr: $("#pAddr").value.trim() };
+  if ((m.phone || m.addr) && !PASS) {
+    const p = $("#pPass").value; if (p.length < 4) { toast("Đặt mật khẩu nhóm (ít nhất 4 ký tự) để mã hoá SĐT/địa chỉ"); $("#pPass").focus(); return; }
+    PASS = p; unlocked = true; try { sessionStorage.setItem("dl-pass", p); } catch (e) {}
+  }
+  if (pEdit >= 0) DATA.members[pEdit] = m; else DATA.members.push(m);
+  if (PASS) await sealSecrets();
+  $("#pModal").classList.remove("open"); commit(pEdit >= 0 ? "Đã lưu thông tin" : "Đã thêm người");
+};
+
+// ===== Bật/tắt chế độ chỉnh sửa =====
+function setEdit(on) {
+  document.body.classList.toggle("editing", on);
+  document.querySelectorAll(".editchip").forEach(a => a.textContent = on ? "✅ Xong" : "✏️ Sửa");
+  if (on) { $("#vCard").click(); toast("Đã bật chế độ chỉnh sửa"); } else toast("Đã tắt chỉnh sửa");
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-toggle-edit]"); if (b) { e.preventDefault(); setEdit(!document.body.classList.contains("editing")); } });
+
+$("#vCard").onclick = () => { $("#days").style.display = ""; $("#table").style.display = "none"; $("#vCard").classList.add("on"); $("#vTable").classList.remove("on"); };
+$("#vTable").onclick = () => { $("#days").style.display = "none"; $("#table").style.display = ""; $("#vTable").classList.add("on"); $("#vCard").classList.remove("on"); };
+$("#file").onchange = e => { const f = e.target.files[0]; if (!f) return; f.text().then(t => { render(parse(t)); saveDraft(); toast("Đã nạp " + f.name); }); };
+load();
+
+// ===== Mobile: chọn ngày, vuốt, thanh tab dưới =====
+const isMobile = () => matchMedia("(max-width:700px)").matches;
+let curDay = +(store.get("dl-day") || 0);
+function showDay(i, scroll) {
+  const days = [...document.querySelectorAll(".day")]; if (!days.length) return;
+  curDay = Math.max(0, Math.min(days.length - 1, i)); store.set("dl-day", curDay);
+  days.forEach((s, k) => s.classList.toggle("on", k === curDay));
+  document.querySelectorAll("nav a[data-day]").forEach(a => a.classList.toggle("on", +a.dataset.day === curDay));
+  const chip = document.querySelector(`nav a[data-day="${curDay}"]`); if (chip) chip.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  if (scroll && isMobile()) document.querySelector("nav").scrollIntoView({ behavior: "smooth" });
+}
+const _render2 = render;
+render = d => {
+  _render2(d); showDay(curDay);
+  document.querySelectorAll("nav a[data-day]").forEach(a => a.addEventListener("click", e => { if (isMobile()) { e.preventDefault(); setTab("cards"); showDay(+a.dataset.day, true); } }));
+};
+let sx = 0, sy = 0;
+$("#days").addEventListener("touchstart", e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+$("#days").addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if (isMobile() && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && !e.target.closest("iframe,.mapbox")) showDay(curDay + (dx < 0 ? 1 : -1), true);
+}, { passive: true });
+function setTab(tab) {
+  document.querySelectorAll(".tabbar button[data-tab]").forEach(b => { if (b.dataset.tab !== "music") b.classList.toggle("on", b.dataset.tab === tab); });
+  if (tab === "cards") { $("#vCard").click(); $("#swipehint").style.display = ""; }
+  if (tab === "table") { $("#vTable").click(); $("#swipehint").style.display = "none"; $("#table").scrollIntoView({ behavior: "smooth" }); }
+  if (["chi-phi", "quan-an", "thanh-vien"].includes(tab)) document.getElementById(tab).scrollIntoView({ behavior: "smooth" });
+}
+document.querySelectorAll(".tabbar button[data-tab]").forEach(b => b.onclick = () => b.dataset.tab === "music" ? $("#music").click() : setTab(b.dataset.tab));
+
+// ===== Nhạc nền =====
+let musicSrc = "";
+const _render = render;
+render = d => { musicSrc = (d.trip["Nhạc"] || "").trim(); _render(d); };
+const Lofi = (() => {
+  let ctx, master, timer, step = 0, playing = false;
+  const chords = [[60,64,67,71],[57,60,64,67],[53,57,60,64],[55,59,62,65]]; // Cmaj7 Am7 Fmaj7 G7
+  const hz = m => 440 * Math.pow(2, (m - 69) / 12);
+  function note(m, t, dur, type, vol) {
+    const o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+    o.type = type; o.frequency.value = hz(m); f.type = "lowpass"; f.frequency.value = 1400;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(f); f.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function hat(t, vol) {
+    const b = ctx.createBuffer(1, ctx.sampleRate * 0.05, ctx.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    const s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = b; f.type = "highpass"; f.frequency.value = 6000; g.gain.value = vol;
+    s.connect(f); f.connect(g); g.connect(master); s.start(t);
+  }
+  function kick(t) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(110, t); o.frequency.exponentialRampToValueAtTime(40, t + 0.25);
+    g.gain.setValueAtTime(0.35, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.32);
+  }
+  const beat = 60 / 72 / 2; // 72 BPM, nốt móc đơn
+  function tick() {
+    const t = ctx.currentTime + 0.05, bar = Math.floor(step / 8) % 4, pos = step % 8, ch = chords[bar];
+    if (pos === 0) { ch.forEach(m => note(m, t, beat * 8, "triangle", 0.045)); note(ch[0] - 24, t, beat * 6, "sine", 0.16); }
+    if (pos === 0 || pos === 5) kick(t);
+    hat(t + (pos % 2 ? beat * 0.12 : 0), pos % 2 ? 0.02 : 0.035);
+    if ([1, 3, 4, 6].includes(pos) && Math.random() < 0.8) note(ch[(pos + bar) % 4] + 12, t, beat * 1.6, "sine", 0.05);
+    step++;
+  }
+  return {
+    start() {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (!master) { master = ctx.createGain(); master.gain.value = 0.7; master.connect(ctx.destination); }
+      ctx.resume(); playing = true; timer = setInterval(tick, beat * 1000);
+    },
+    stop() { playing = false; clearInterval(timer); },
+    get on() { return playing; }
+  };
+})();
+let audioEl = null;
+new MutationObserver(() => $("#tabMusic").classList.toggle("playing", $("#music").classList.contains("on"))).observe($("#music"), { attributes: true });
+$("#music").onclick = () => {
+  const btn = $("#music");
+  if (/^https?:\/\//i.test(musicSrc) && !/\.(mp3|m4a|ogg|wav)(\?|$)/i.test(musicSrc)) { location.href = musicSrc; return; }
+  try {
+    if (musicSrc) {
+      audioEl = audioEl || Object.assign(new Audio(musicSrc), { loop: true, volume: 0.6 });
+      if (audioEl.paused) { audioEl.play().catch(() => {}); btn.classList.add("on"); $("#musicTxt").textContent = "Tắt nhạc"; }
+      else { audioEl.pause(); btn.classList.remove("on"); $("#musicTxt").textContent = "Bật nhạc"; }
+    } else {
+      if (Lofi.on) { Lofi.stop(); btn.classList.remove("on"); $("#musicTxt").textContent = "Bật nhạc lofi"; }
+      else { Lofi.start(); btn.classList.add("on"); $("#musicTxt").textContent = "Tắt nhạc"; }
+    }
+  } catch (e) { $("#musicTxt").textContent = "Trình duyệt chặn âm thanh"; }
+};
+</script>
+</body>
+</html>
